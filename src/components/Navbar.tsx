@@ -7,16 +7,18 @@ import Contact from "./Contact";
 import Hero from "./Hero";
 import Title from "./ui/Title";
 import Image from "next/image";
+import { getLang } from "@/langs";
 
-const links = [
-  [Overview.sectionId, Overview.sectionName],
-  [Experience.sectionId, Experience.sectionName],
-  [Stack.sectionId, Stack.sectionName],
-  [Project.sectionId, Project.sectionName],
-  [Contact.sectionId, Contact.sectionName],
-]
 
 export default function Navbar() {
+  const links = [
+    [Overview.sectionId, getLang("NAV_OVERVIEW")()],
+    [Experience.sectionId, getLang("NAV_EXPERIENCE")()],
+    [Stack.sectionId, getLang("NAV_STACK")()],
+    [Project.sectionId, getLang("NAV_PROJECT")()],
+    [Contact.sectionId, getLang("NAV_CONTACT")()],
+  ];
+
   return <nav className="fixed top-0 left-0 right-0 w-full flex justify-between py-2.5 h-20 items-center bg-background px-20">
     <Link href={"#" + Hero.sectionId} className="flex h-full gap-2.5 items-center">
       <Image

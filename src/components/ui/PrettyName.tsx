@@ -5,7 +5,7 @@ type PrettyNameProps = {
 }
 
 export default function PrettyName({ children }: PrettyNameProps) {
-  return <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-blue-400 underline">
+  return <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-blue-400">
     {children}
   </span>;
 }
