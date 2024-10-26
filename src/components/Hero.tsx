@@ -1,13 +1,14 @@
+import PrettyName from "./ui/PrettyName";
 import Title from "./ui/Title";
-import TitleBadge from "./ui/TitleBadge";
 
 export default function Hero() {
   return <section
-    className="section"
-    id={Hero.sectionName}>
-    <TitleBadge>Fullstuck Developer</TitleBadge>
-    <Title>Rakemoon</Title>
+    className="section flex flex-col items-center justify-center"
+    id={Hero.sectionId}>
+    <Title>
+      Hi! I{"'"}m <PrettyName>Adzikri Fauzi Shiddiq</PrettyName>
+    </Title>
   </section>;
 }
 
-Hero.sectionName = "hero";
+Hero.sectionId = "hero";

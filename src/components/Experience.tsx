@@ -4,10 +4,11 @@ import TitleBadge from "./ui/TitleBadge";
 export default function Experience() {
   return <section
     className="section"
-    id={Experience.sectionName}>
+    id={Experience.sectionId}>
     <TitleBadge>What i have done so far</TitleBadge>
     <Title>Experiences</Title>
   </section>;
 }
 
-Experience.sectionName = "experience";
+Experience.sectionId = "experience";
+Experience.sectionName = "Experience";

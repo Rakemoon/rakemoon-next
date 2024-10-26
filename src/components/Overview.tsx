@@ -4,10 +4,11 @@ import TitleBadge from "./ui/TitleBadge";
 export default function Overview() {
   return <section
     className="section"
-    id={Overview.sectionName}>
+    id={Overview.sectionId}>
     <TitleBadge>Introduction</TitleBadge>
     <Title>Overview</Title>
   </section>;
 }
 
-Overview.sectionName = "overview";
+Overview.sectionId = "overview";
+Overview.sectionName = "Overview";
