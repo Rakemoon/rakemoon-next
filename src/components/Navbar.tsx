@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import Stack from "./Stack";
 import Project from "./Project";
