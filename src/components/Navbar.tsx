@@ -6,9 +6,13 @@ import Hero from "./Hero";
 import Title from "./ui/Title";
 import Image from "next/image";
 import { getLang } from "@/langs";
+import NavbarButton from "./ui/NavbarButton";
+import { useCallback, useState } from "react";
 
 
 export default function Navbar() {
+  const [isOpen, setisOpen] = useState(false);
+
   const links = [
     ["overview", getLang("NAV_OVERVIEW")()],
     ["experience", getLang("NAV_EXPERIENCE")()],
@@ -16,6 +20,8 @@ export default function Navbar() {
     [Project.sectionId, getLang("NAV_PROJECT")()],
     [Contact.sectionId, getLang("NAV_CONTACT")()],
   ];
+
+  const flipNavAction = useCallback(() => setisOpen(x => !x), []);
 
   return <nav className="fixed top-0 left-0 right-0 w-full flex justify-between py-2.5 h-20 items-center bg-background px-20 max-md:px-2">
     <Link href={"#" + Hero.sectionId} className="flex h-full gap-2.5 items-center">
@@ -28,11 +34,18 @@ export default function Navbar() {
       />
       <Title>Rakemoon</Title>
     </Link>
-    <ul className="inline-flex gap-2.5 w-fit max-md:hidden">
+    <NavbarButton
+      flipNavAction={flipNavAction}
+      isOpen={isOpen}
+    />
+    <ul className={"flex gap-2.5 w-fit " +
+      "max-md:fixed max-md:flex-col max-md:right-1 max-md:top-20 max-md:bg-background max-md:border max-md:border-foreground " +
+      "max-md:rounded-md transition " +
+      (!isOpen && "max-md:scale-y-0 max-md:-translate-y-1/2")}>
       {
         links
           .map(
-            ([id, name]) => <li key={id}><Link href={"#" + id}>{name}</Link></li>
+            ([id, name]) => <li key={id} className="max-md:hover:bg-white max-md:hover:bg-opacity-20 max-md:p-2.5 transition"><Link href={"#" + id}>{name}</Link></li>
           )
       }
     </ul>
