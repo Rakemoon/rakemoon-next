@@ -40,12 +40,12 @@ export default function Navbar() {
     />
     <ul className={"flex gap-2.5 w-fit " +
       "max-md:fixed max-md:flex-col max-md:right-1 max-md:top-20 max-md:bg-background max-md:border max-md:border-foreground " +
-      "max-md:rounded-md transition " +
+      "max-md:rounded-md transition max-md:gap-0 " +
       (!isOpen && "max-md:scale-y-0 max-md:-translate-y-1/2")}>
       {
         links
           .map(
-            ([id, name]) => <li key={id} className="max-md:hover:bg-white max-md:hover:bg-opacity-20 max-md:p-2.5 transition"><Link href={"#" + id}>{name}</Link></li>
+            ([id, name]) => <li key={id} className="max-md:hover:bg-white max-md:hover:bg-opacity-20 transition max-md:h-max"><Link className="w-full h-full block max-md:p-2.5" href={"#" + id}>{name}</Link></li>
           )
       }
     </ul>
