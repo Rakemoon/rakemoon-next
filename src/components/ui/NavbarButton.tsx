@@ -6,7 +6,7 @@ type NavbarButtonProps = {
 }
 export default function NavbarButton({ isOpen, flipNavAction }: NavbarButtonProps) {
 
-  return <button onClick={flipNavAction} className="md:hidden">
+  return <button onClick={flipNavAction} className="md:hidden" aria-label="navbar">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="1.5rem"

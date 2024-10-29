@@ -35,7 +35,13 @@ const links = [
 export default function ContactLinks() {
   return <div className="flex flex-col gap-2.5 h-full">
     {links.map(x => {
-      return <Link key={x.name} target="_blank" href={x.href} className="group">{x.icon}</Link>
+      return <Link
+        key={x.name}
+        target="_blank"
+        href={x.href}
+        className="group"
+        aria-label={x.name}
+      >{x.icon}</Link>
     })}
   </div>
 }

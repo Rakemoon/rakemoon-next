@@ -22,7 +22,7 @@ export default function ProjectCard({ name, summary, imagePath, stacks, links }:
       <Description>{summary}</Description>
     </div>
 
-    <div className="flex gap-1 flex-wrap text-white text-opacity-30 text-sm">
+    <div className="flex gap-1 flex-wrap text-white text-opacity-50 text-sm">
       {stacks.map(x => <span key={x}>#{x}</span>)}
     </div>
 
