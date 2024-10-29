@@ -62,7 +62,7 @@ const enUS = {
     {
       name: "Calorie Tracker",
       summary: "Track your calorie intake effortlessly with calorie tracker!",
-      stacks: ["html5", "css", "javascript", "jquery", "bulmacss", "honojs", "prismadb", "typescript", "supabase", "postgress", "bun", "nodejs"],
+      stacks: ["html5", "css", "js", "jquery", "bulmacss", "honojs", "prismadb", "ts", "supabase", "postgresql", "bun", "nodejs"],
       imagePath: "/assets/projects/calorie-tracker",
       links: [
         ["Demo", "https://calorie-tracker-eta.vercel.app"],
@@ -72,7 +72,7 @@ const enUS = {
     {
       name: "Matzhar",
       summary: "Monolith Featured e-commerce app!",
-      stacks: ["svelte", "tailwind", "daisyui", "sveltekit", "supabase", "postgress", "drizzle", "nodejs"],
+      stacks: ["svelte", "tailwindcss", "daisyui", "supabase", "postgresql", "drizzledb", "nodejs"],
       imagePath: "/assets/projects/matzhar",
       links: [
         ["Demo", "https://matzhar-kohl.vercel.app"],
@@ -82,7 +82,7 @@ const enUS = {
     {
       name: "Collosal Slicing",
       summary: "Self commisioned to slicing the figma design",
-      stacks: ["react", "nextjs", "tailwind", "nodejs"],
+      stacks: ["react", "nextjs", "tailwindcss", "nodejs"],
       imagePath: "/assets/projects/collosal-slicing",
       links: [
         ["Demo", "https://collosal-slicing-figma.vercel.app/"],

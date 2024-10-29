@@ -1,3 +1,5 @@
+import type { ITechStack } from "@/components/ui/TechStack";
+
 export type LangRecord = Record<Uppercase<string>, (...args: string[]) => unknown>;
 
 export type DiscordEmbed = {
@@ -59,6 +61,6 @@ export type ProjectList = {
   name: string;
   summary: string;
   imagePath: string;
-  stacks: string[];
+  stacks: (keyof ITechStack)[];
   links: [name: string, href: string][];
 }
