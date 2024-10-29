@@ -69,9 +69,9 @@ export default function Contact() {
   return <section
     className="section flex items-center justify-center"
     id={Contact.sectionId}>
-    <div className="flex gap-5 items-end">
+    <div className="flex gap-5 items-end max-md:flex-col-reverse max-md:items-center max-md:w-full">
       <ContactLinks />
-      <div className="flex flex-col gap-2.5 before:w-full before:h-full relative before:absolute before:-z-20 before:bg-foreground bg-background before:top-2.5 before:left-2.5 p-2.5 border-2 rounded-md before:rounded-md">
+      <div className="flex flex-col gap-2.5 before:w-full before:h-full relative before:absolute before:-z-20 before:bg-foreground bg-background before:top-2.5 before:left-2.5 p-2.5 border-2 rounded-md before:rounded-md max-md:w-5/6">
         <TitleBadge>{badge}</TitleBadge>
         <Title>{title}</Title>
         <form

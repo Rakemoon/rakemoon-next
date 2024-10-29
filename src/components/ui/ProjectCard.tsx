@@ -3,6 +3,7 @@ import Card from "./Card";
 import Description from "./Description";
 import Link from "next/link";
 import { ProjectList } from "@/types";
+import techStack from "./TechStack";
 
 type ProjectCardProps = ProjectList;
 
@@ -22,11 +23,19 @@ export default function ProjectCard({ name, summary, imagePath, stacks, links }:
       <Description>{summary}</Description>
     </div>
 
-    <div className="flex gap-1 flex-wrap text-white text-opacity-50 text-sm">
-      {stacks.map(x => <span key={x}>#{x}</span>)}
+    <div className="flex gap-1 flex-wrap-reverse mt-auto">
+      {stacks.map(x => {
+        const stack = techStack[x];
+        return <stack.icon
+          key={x}
+          height="2.1rem"
+          width="2.1rem"
+          className="border rounded-full overflow-hidden p-1 border-dashed"
+        />;
+      })}
     </div>
 
-    <div className="flex gap-2.5 mt-auto flex-wrap">
+    <div className="flex gap-2.5 flex-wrap">
       {links.map(([name, href]) => <ProjectButton text={name} link={href} key={href} />)}
     </div>
   </Card>;

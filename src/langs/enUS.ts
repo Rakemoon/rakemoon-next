@@ -72,7 +72,7 @@ const enUS = {
     {
       name: "Matzhar",
       summary: "Monolith Featured e-commerce app!",
-      stacks: ["svelte", "tailwindcss", "daisyui", "supabase", "postgresql", "drizzledb", "nodejs"],
+      stacks: ["svelte", "tailwindcss", "daisyui", "supabase", "postgresql", "drizzledb", "nodejs", "ts", "css"],
       imagePath: "/assets/projects/matzhar",
       links: [
         ["Demo", "https://matzhar-kohl.vercel.app"],
@@ -82,7 +82,7 @@ const enUS = {
     {
       name: "Collosal Slicing",
       summary: "Self commisioned to slicing the figma design",
-      stacks: ["react", "nextjs", "tailwindcss", "nodejs"],
+      stacks: ["react", "nextjs", "tailwindcss", "nodejs", "ts"],
       imagePath: "/assets/projects/collosal-slicing",
       links: [
         ["Demo", "https://collosal-slicing-figma.vercel.app/"],

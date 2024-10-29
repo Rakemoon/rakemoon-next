@@ -33,7 +33,7 @@ const links = [
 ]
 
 export default function ContactLinks() {
-  return <div className="flex flex-col gap-2.5 h-full">
+  return <div className="flex flex-col gap-2.5 h-full max-md:flex-row">
     {links.map(x => {
       return <Link
         key={x.name}
