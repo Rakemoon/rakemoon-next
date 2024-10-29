@@ -8,7 +8,7 @@ type CardProps = {
 export default function Card({ children, className = "" }: CardProps) {
 
   return <div className={
-    "px-5 py-2.5 rounded-md bg-background border-foreground border-2 hover:rotate-12 hover:scale-105 transition flex flex-col " +
+    "px-5 py-2.5 rounded-md bg-background border-foreground border-2 flex flex-col " +
     className
   }>
     <div className="flex gap-2 mb-2.5">
@@ -17,8 +17,7 @@ export default function Card({ children, className = "" }: CardProps) {
       <div className="bg-yellow-500 h-1 aspect-square rounded-full"></div>
     </div>
     {children}
-    <div className="mt-2.5"></div>
-    <div className="bg-foreground h-[1px] w-20 ml-auto mt-auto"></div>
+    <div className="bg-foreground h-[1px] w-20 ml-auto"></div>
   </div>
 
 }

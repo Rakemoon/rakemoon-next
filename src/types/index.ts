@@ -54,3 +54,11 @@ export type DiscordWebhookExecuteParams = {
   tts?: string;
   embeds?: DiscordEmbed[];
 }
+
+export type ProjectList = {
+  name: string;
+  summary: string;
+  imagePath: string;
+  stacks: string[];
+  links: [name: string, href: string][];
+}

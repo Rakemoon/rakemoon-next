@@ -1,4 +1,4 @@
-import { LangRecord } from "@/types";
+import { LangRecord, ProjectList } from "@/types";
 
 const enUS = {
   "USER_NAME": () => "Adzikri Fauzi Shiddiq" as const,
@@ -58,6 +58,39 @@ const enUS = {
 
   "PROJECT_TITLE": () => "Projects",
   "PROJECT_BADGE": () => "My Work",
+  "PROJECT_ITEMS": () => [
+    {
+      name: "Calorie Tracker",
+      summary: "Track your calorie intake effortlessly with calorie tracker!",
+      stacks: ["html5", "css", "javascript", "jquery", "bulmacss", "honojs", "prismadb", "typescript", "supabase", "postgress", "bun", "nodejs"],
+      imagePath: "/assets/projects/calorie-tracker",
+      links: [
+        ["Demo", "https://calorie-tracker-eta.vercel.app"],
+        ["Repository", "https://github.com/RaihanArdianata/calorie-calculator"]
+      ]
+    },
+    {
+      name: "Matzhar",
+      summary: "Monolith Featured e-commerce app!",
+      stacks: ["svelte", "tailwind", "daisyui", "sveltekit", "supabase", "postgress", "drizzle", "nodejs"],
+      imagePath: "/assets/projects/matzhar",
+      links: [
+        ["Demo", "https://matzhar-kohl.vercel.app"],
+        ["Repository", "https://github.com/Rakemoon/matzhar"]
+      ]
+    },
+    {
+      name: "Collosal Slicing",
+      summary: "Self commisioned to slicing the figma design",
+      stacks: ["react", "nextjs", "tailwind", "nodejs"],
+      imagePath: "/assets/projects/collosal-slicing",
+      links: [
+        ["Demo", "https://collosal-slicing-figma.vercel.app/"],
+        ["Repository", "https://github.com/Rakemoon/collosal-slicing-figma"],
+        ["Design", "https://codedesign.dev/challenge/collosal"]
+      ]
+    }
+  ] satisfies ProjectList[],
 
   "CONTACT_TITLE": () => "Contact",
   "CONTACT_BADGE": () => "Get In touch",
