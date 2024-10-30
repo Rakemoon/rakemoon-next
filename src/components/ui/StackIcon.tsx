@@ -18,7 +18,7 @@ export default function StackIcon({ children, tip }: StackIconProps) {
     }
     ref={ref}>
 
-    <span className="absolute -top-1/2 left-0 right-0 text-center bg-background rounded-md border text-xs p-1 scale-0 group-hover:scale-100 transition w-max mx-auto">
+    <span className="absolute -top-4 left-0 right-0 text-center bg-background rounded-md border text-xs p-1 scale-0 group-hover:scale-100 transition w-max mx-auto">
       {tip}
     </span>
     {children}

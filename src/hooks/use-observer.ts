@@ -29,7 +29,6 @@ export function useOnView<Ref extends Element>() {
     if (current && observer) {
       observer.observe(current);
       intersectOption.set(current, (_, x) => setIsOnView(x));
-      console.log(intersectOption.size);
 
       return () => {
         observer.unobserve(current);
