@@ -1,16 +1,25 @@
+"use client";
+
 import Image from "next/image";
 import Card from "./Card";
 import Description from "./Description";
 import Link from "next/link";
 import { ProjectList } from "@/types";
 import techStack from "./TechStack";
+import { useOnView } from "@/hooks/use-observer";
 
 type ProjectCardProps = ProjectList;
 
 const size = 100;
 
 export default function ProjectCard({ name, summary, imagePath, stacks, links }: ProjectCardProps) {
-  return <Card className="gap-5 hover:-translate-y-1 transition w-full h-full">
+
+  const [ref, isOnView] = useOnView<HTMLDivElement>();
+
+  return <Card className={
+    "gap-5 transition w-full h-full duration-1000 "
+    + (isOnView ? "" : "opacity-0 translate-y-1/2")
+  } ref={ref}>
     <Image
       src={imagePath + "/thumb.png"}
       alt={name}
