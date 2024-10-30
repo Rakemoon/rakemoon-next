@@ -106,7 +106,9 @@ export default function Contact() {
             />
             <p className={labelStyleClass}>Message</p>
           </label>
-          <Card className="w-max mt-2.5 self-center"><button>Send</button></Card>
+          <button className="w-max mt-2.5 self-center">
+            <Card>Send</Card>
+          </button>
         </form>
       </div>
     </div>

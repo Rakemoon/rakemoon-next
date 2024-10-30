@@ -10,13 +10,13 @@ type ProjectCardProps = ProjectList;
 const size = 100;
 
 export default function ProjectCard({ name, summary, imagePath, stacks, links }: ProjectCardProps) {
-  return <Card className="gap-5 hover:-translate-y-1 transition w-full">
+  return <Card className="gap-5 hover:-translate-y-1 transition w-full h-full">
     <Image
       src={imagePath + "/thumb.png"}
       alt={name}
       width={16 * size}
       height={9 * size}
-      className="aspect-video rounded-md"
+      className="aspect-video rounded-md object-cover"
     />
     <div>
       <h3 className="font-semibold text-2xl">{name}</h3>

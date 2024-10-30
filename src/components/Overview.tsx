@@ -18,10 +18,10 @@ export default function Overview() {
       <Title>{title}</Title>
       <Description>{description}</Description>
     </div>
-    <div className="flex gap-2.5 flex-wrap max-md:justify-center max-w-[50rem]">
+    <ul className="grid grid-cols-2 max-sm:grid-cols-1 gap-2.5 max-w-[50rem]">
       {
-        cards.map(x => <Card key={x.title}>{x.title}</Card>)
+        cards.map(x => <li key={x.title}><Card>{x.title}</Card></li>)
       }
-    </div>
+    </ul>
   </section>;
 }
