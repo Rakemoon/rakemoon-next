@@ -1,4 +1,4 @@
-import { LangRecord, ProjectList } from "@/types";
+import { Experience, LangRecord, ProjectList } from "@/types";
 
 const enUS = {
   "USER_NAME": () => "Adzikri Fauzi Shiddiq" as const,
@@ -50,8 +50,56 @@ const enUS = {
   "EXPERIENCE_TITLE": () => "Experiences",
   "EXPERIENCE_BADGE": () => "What i have done so far",
   "EXPERIENCE_ITEMS": () => [
-
-  ] as const,
+    {
+      when: [new Date("2019-06"), new Date("2022-07")],
+      as: "Computer and Engineering Network Student",
+      place: "SMKN 1 Panjalu",
+      at: "Ciamis, West Java, Indonesia",
+      does: [
+        "Learn about TCP/IP and VoIP",
+        "Experienced work as team and make Blog Website",
+        "Analyzed how debian work to create DNS Server",
+        "Learn and Try using Mikrotik Route",
+      ],
+      imagePath: "/assets/experiences/smk"
+    },
+    {
+      when: [new Date("2021-01"), new Date("2021-03")],
+      as: "Internship Student",
+      place: "Ajat Computer System",
+      at: "Ciamis, West Java, Indonesia",
+      does: [
+        "Analyzed problems and worked with teams to develop solutions about OS Installation and Build Computer",
+        "Provide clerical support, addressing routine and special requirements"
+      ],
+      imagePath: "/assets/experiences/acs"
+    },
+    {
+      when: [new Date("2023-12"), new Date("2024-7")],
+      as: "Warehouse Staff & Office Staff",
+      place: "Noforty Project Official",
+      at: "Bandung, West Java, Indonesia",
+      does: [
+        "Managed and processed up to 1,000 orders efficiently.",
+        "Responsible for inventory management, including the receipt and dispatch of goods.",
+        "Oversaw the shipping process, including checking, packing, and cross-checking to ensure accuracy and customer satisfaction."
+      ],
+      imagePath: "/assets/experiences/nfrty"
+    },
+    {
+      when: [new Date("2024-05"), "now"],
+      as: "Web Developer Student & Self Employee",
+      place: "Random Para Nolep (RPN)",
+      at: "Remote",
+      does: [
+        "Completed self-commission projects while advancing skills in web programming up to Phase 2.",
+        "Collaborated on group projects with classmates to enhance teamwork and problem-solving abilities.",
+        "Assisted junior students in overcoming challenges and difficulties in their coursework.",
+        "Selected as a supervisor for live coding sessions, demonstrating leadership and attention to detail."
+      ],
+      imagePath: "/assets/experiences/rpn"
+    }
+  ] satisfies Experience[],
 
   "STACK_TITLE": () => "Tech Stack",
   "STACK_BADGE": () => "What i have learned so far",

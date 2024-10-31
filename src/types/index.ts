@@ -64,3 +64,12 @@ export type ProjectList = {
   stacks: (keyof ITechStack)[];
   links: [name: string, href: string][];
 }
+
+export type Experience = {
+  when: [from: Date, to: Date | "now"];
+  as: string;
+  place: string;
+  at: string;
+  does: string[];
+  imagePath: string;
+}
