@@ -9,7 +9,7 @@ export default function Project() {
   const projects = getLang("PROJECT_ITEMS")();
 
   return <section
-    className="section flex flex-col gap-2.5"
+    className="section flex flex-col gap-2.5 overflow-hidden"
     id={Project.sectionId}>
     <TitleBadge>{badge}</TitleBadge>
     <Title>{title}</Title>

@@ -18,7 +18,7 @@ export default function Experience() {
 
     <ul className={
       "flex flex-col gap-10 relative " +
-      "before:absolute before:inset-0 before:mx-auto before:w-[4px] before:bg-foreground " +
+      "before:absolute before:inset-0 before:mx-auto before:w-[2px] before:bg-foreground " +
       "before:h-full before:-z-10 max-lg:before:mx-[1.17rem]"
     }>
       {experiences

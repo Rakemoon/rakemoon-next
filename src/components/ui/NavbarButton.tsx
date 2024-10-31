@@ -17,9 +17,9 @@ export default function NavbarButton({ isOpen, flipNavAction }: NavbarButtonProp
       strokeWidth={3}
       strokeLinecap="round"
       strokeLinejoin="round">
-      <line x1={3} y1={5} x2={21} y2={5} style={{ transform: isOpen ? "rotateZ(45deg) translateX(5px) translateY(-10px)" : "" }} className="transition"></line>
-      <line x1={3} y1={5 + 7} x2={21} y2={5 + 7} style={{ transform: isOpen ? "scale(0)" : "" }} className="transition"></line>
-      <line x1={3} y1={5 + 7 * 2} x2={21} y2={5 + 7 * 2} style={{ transform: isOpen ? "rotateZ(-45deg) translateX(-7px) translateY(-2px)" : "" }} className="transition"></line>
+      <line x1={3} y1={5} x2={21} y2={5} style={{ transform: isOpen ? "rotateZ(45deg) translateX(5px) translateY(-4px)" : "" }} className="transition ease-ease-out-back duration-500"></line>
+      <line x1={3} y1={5 + 7} x2={21} y2={5 + 7} style={{ transform: isOpen ? "translateX(100%) translateY(100%) rotate(180deg) scaleX(0)" : "" }} className="transition ease-in-out duration-500"></line>
+      <line x1={3} y1={5 + 7 * 2} x2={21} y2={5 + 7 * 2} style={{ transform: isOpen ? "rotateZ(-45deg) translateX(-13px) translateY(-2px)" : "" }} className="transition ease-ease-out-back duration-500"></line>
     </svg>
   </button>;
 }

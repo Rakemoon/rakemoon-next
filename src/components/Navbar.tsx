@@ -25,14 +25,14 @@ export default function Navbar() {
 
   const flipNavAction = useCallback(() => setisOpen(x => !x), []);
 
-  return <nav className="fixed top-0 left-0 right-0 w-full flex justify-between py-2.5 h-20 items-center bg-background px-20 max-md:px-2 z-50">
+  return <nav className="fixed top-0 left-0 right-0 w-full flex justify-between py-2.5 h-20 items-center bg-transparent px-20 max-md:px-2 z-50 backdrop-blur-sm">
     <Link href={"#" + Hero.sectionId} className="flex h-full gap-2.5 items-center">
       <Image
         src="https://avatars.githubusercontent.com/u/39423103"
         alt="avatar"
-        width={100}
-        height={100}
-        className="aspect-square h-full w-auto rounded-full"
+        width={40}
+        height={40}
+        className="aspect-square rounded-full"
       />
       <Title>Rakemoon</Title>
     </Link>

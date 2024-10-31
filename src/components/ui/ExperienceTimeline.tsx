@@ -12,7 +12,7 @@ type ExperienceTimelineProps = Experience & {
 function CardExperience(props: ExperienceTimelineProps) {
   const [ref, isOnView] = useOnView<HTMLDivElement>();
   return <Card className={
-    "h-full w-full flex flex-col gap-2.5 transition duration-1000 relative " +
+    "h-full w-full flex flex-col gap-2.5 transition ease-ease-out-back duration-1000 relative " +
     "before:absolute before:bg-transparent before:top-0 before:bottom-0 before:h-0 before:my-auto " +
     `${props.odd ? "before:-left-[10px]" : "before:-right-[10px]"} ` +
     "before:border-t-[10px] before:border-t-transparent " +
@@ -34,10 +34,10 @@ function CardExperience(props: ExperienceTimelineProps) {
 function WhenExperience(props: ExperienceTimelineProps) {
   const [ref, isOnView] = useOnView<HTMLSpanElement>();
   return <i ref={ref} className={
-    "w-max block my-auto transition duration-1000 " +
+    "w-max block my-auto transition ease-ease-out-back duration-1000 " +
     "max-lg:bg-background max-lg:border max-lg:border-dashed max-lg:rounded-md max-lg:p-1 max-lg:text-xs " +
     (props.odd ? "ml-auto " : "") +
-    (isOnView ? "" : `opacity-0 ${props.odd ? "-translate-x-1/2" : "translate-x-1/2"}`)
+    (isOnView ? "" : `opacity-0 ${props.odd ? "translate-x-1/2" : "-translate-x-1/2"}`)
   }>
     {props.when.map(formatDate).join(" - ")}
   </i>;
@@ -52,7 +52,7 @@ function CircleExperience(props: ExperienceTimelineProps) {
   const [ref, isOnView] = useOnView<HTMLDivElement>();
   return <div
     className={
-      "w-20 min-w-10 max-lg:w-10 aspect-square bg-background rounded-full self-center max-lg:self-start justify-self-center border-[4px] transition duration-1000 overflow-hidden " +
+      "w-20 min-w-10 max-lg:w-10 aspect-square bg-background rounded-full self-center max-lg:self-start justify-self-center border-[2px] transition duration-1000 overflow-hidden " +
       (isOnView ? "" : "scale-0")
     }
     ref={ref}>
