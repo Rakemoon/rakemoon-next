@@ -17,3 +17,7 @@ export function sendDiscordWebhook(webhook_url: string, value: DiscordWebhookExe
     body: JSON.stringify(value)
   });
 }
+
+export function oneLineTrim(args: TemplateStringsArray, ...subs: unknown[]) {
+  return String.raw(args, ...subs).replaceAll(/\n|\r\n/g, " ").trim().trim();
+} 

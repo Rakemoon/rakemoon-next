@@ -1,4 +1,5 @@
 import { Experience, LangRecord, ProjectList } from "@/types";
+import { oneLineTrim } from "@/util";
 
 const enUS = {
   "USER_NAME": () => "Adzikri Fauzi Shiddiq" as const,
@@ -16,11 +17,11 @@ const enUS = {
 
   "OVERVIEW_TITLE": () => "Overview",
   "OVERVIEW_BADGE": () => "Introduction",
-  "OVERVIEW_DESCRIPTION": () => [`
+  "OVERVIEW_DESCRIPTION": () => [oneLineTrim`
     I am a Junior Fullstack Developer with 5 months of experience in developing, designing, and deploying backend systems.
     I possess skills in design slicing and innovation in frontend development.
     Additionally, I have experience in creating WhatsApp bots, as well as working as a warehouse staff member and e-commerce administrator.
-  `, `
+  `, oneLineTrim`
     Furthermore, I have a background in network engineering, thanks to my education in Computer Networking.
     I am committed to continuous learning and quickly adapting to dynamic environments, and I am enthusiastic about making a positive contribution to every project I undertake.
   `
