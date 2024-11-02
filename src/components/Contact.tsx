@@ -44,7 +44,7 @@ export default function Contact() {
   const badge = getLang("CONTACT_BADGE")();
 
   const inputStyleClass = useMemo(() => {
-    const className = "bg-transparent rounded-md border-foreground border-2 p-2.5 outline-none focus:border-blue-400 peer block w-full";
+    const className = "bg-transparent rounded-md border-foreground dark:border-2 p-2.5 outline-none focus:border-blue-400 peer block w-full dark:shadow-none shadow-md shadow-stone-500";
     return className;
   }, []);
 

@@ -18,8 +18,8 @@ export default function Experience() {
 
     <ul className={
       "flex flex-col gap-10 relative " +
-      "before:absolute before:inset-0 before:mx-auto before:w-[2px] before:bg-foreground " +
-      "before:h-full before:-z-10 max-lg:before:mx-[1.17rem]"
+      "before:absolute before:inset-0 before:mx-auto before:w-[2px] dark:before:bg-foreground " +
+      "before:h-full before:-z-10 max-lg:before:mx-[1.17rem] before:bg-stone-500"
     }>
       {experiences
         .map((x, i) => <li

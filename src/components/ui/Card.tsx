@@ -10,7 +10,8 @@ const Card = forwardRef<HTMLDivElement, CardProps>(
     return <div
       ref={ref}
       className={
-        "px-5 py-2.5 rounded-md bg-background border-foreground border-2 flex flex-col " +
+        "px-5 py-2.5 rounded-md bg-background border-foreground dark:border-2 flex flex-col " +
+        "dark:shadow-none shadow-md shadow-stone-500 " +
         className
       }>
       <div className="flex gap-2 mb-2.5">

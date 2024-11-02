@@ -23,22 +23,22 @@ const links = [
   {
     name: "Github",
     href: "https://github.com/Rakemoon",
-    icon: <RadixIconsGithubLogo className="hover:text-stone-400" />,
+    icon: <RadixIconsGithubLogo className="hover:text-stone-400 transition" />,
   },
   {
     name: "LinkedIn",
     href: "https://www.linkedin.com/in/adzikri-fauzi-shiddiq",
-    icon: <RadixIconsLinkedinLogo className="hover:text-blue-500" />
+    icon: <RadixIconsLinkedinLogo className="hover:text-blue-500 transition" />
   },
   {
     name: "Facebook",
     href: "https://www.facebook.com/adzikri.fauzi.7",
-    icon: <AkarIconsFacebookFill className="hover:text-blue-600" />
+    icon: <AkarIconsFacebookFill className="hover:text-blue-600 transition" />
   },
   {
     name: "Instagram",
     href: "https://www.instagram.com/kuz_rake/",
-    icon: <RadixIconsInstagramLogo className="hover:text-red-400" />
+    icon: <RadixIconsInstagramLogo className="hover:text-red-400 transition" />
   }
 ]
 

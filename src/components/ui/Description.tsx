@@ -11,5 +11,5 @@ export default function Description({ children }: DescriptionProps) {
 }
 
 function Pharagraph({ children }: DescriptionProps) {
-  return <p className="text-base font-medium text-white text-opacity-50">{children}</p>;
+  return <p className="text-base font-medium dark:text-white text-foreground text-opacity-50">{children}</p>;
 }

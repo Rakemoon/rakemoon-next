@@ -23,8 +23,8 @@ function CardExperience(props: ExperienceTimelineProps) {
     (isOnView ? "" : `opacity-0 ${props.odd ? "translate-x-1/2" : "-translate-x-1/2"}`)
   } ref={ref}>
     <h3 className="text-xl font-semibold w-fit">{props.as}</h3>
-    <h4 className="text-base font-semibold text-white text-opacity-50">{props.place}</h4>
-    <h5 className="text-sm font-semibold text-white text-opacity-50 italic">{props.at}</h5>
+    <h4 className="text-base font-semibold dark:text-white text-black text-opacity-50">{props.place}</h4>
+    <h5 className="text-sm font-semibold dark:text-white text-black text-opacity-50 italic">{props.at}</h5>
     <ul className="list-disc pl-5">
       {props.does.map(x => <li key={x}>{x}</li>)}
     </ul>
@@ -35,7 +35,8 @@ function WhenExperience(props: ExperienceTimelineProps) {
   const [ref, isOnView] = useOnView<HTMLSpanElement>();
   return <i ref={ref} className={
     "w-max block my-auto transition ease-ease-out-back duration-1000 " +
-    "max-lg:bg-background max-lg:border max-lg:border-dashed max-lg:rounded-md max-lg:p-1 max-lg:text-xs " +
+    "max-lg:bg-background dark:max-lg:border max-lg:border-dashed max-lg:rounded-md max-lg:p-1 max-lg:text-xs " +
+    "dark:shadow-none max-lg:shadow-md shadow-stone-500 " +
     (props.odd ? "ml-auto " : "") +
     (isOnView ? "" : `opacity-0 ${props.odd ? "translate-x-1/2" : "-translate-x-1/2"}`)
   }>

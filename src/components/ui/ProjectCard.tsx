@@ -34,7 +34,7 @@ export default function ProjectCard({ name, summary, imagePath, stacks, links }:
 
   return <Card className={
     "gap-5 transition w-full h-full duration-1000 ease-linear "
-    + (isOnView ? "" : "scale-0 rotate-[180deg]")
+    + (isOnView ? "" : "scale-0 rotate-[45deg]")
   } ref={ref}>
     <Image
       src={imagePath + "/thumb.png"}
@@ -54,12 +54,12 @@ export default function ProjectCard({ name, summary, imagePath, stacks, links }:
         return <div
           className="group relative"
           key={x}>
-          <span className="absolute -top-5 w-max text-xs bg-background scale-0 p-1 group-hover:scale-100 transition border rounded-md border-dashed z-10">{stack.name}</span>
+          <span className="absolute -top-5 w-max text-xs bg-background scale-0 p-1 group-hover:scale-100 transition border rounded-md border-dashed z-10 shadow-md dark:shadow-none">{stack.name}</span>
           <stack.icon
             height="2.1rem"
             width="2.1rem"
             className={
-              "border rounded-full overflow-hidden p-1 border-dashed"
+              "dark:border rounded-full overflow-hidden p-1 border-dashed drop-shadow-lg"
             }
           />
         </div>;
@@ -73,7 +73,7 @@ export default function ProjectCard({ name, summary, imagePath, stacks, links }:
 }
 
 function ProjectButton({ text, link }: { text: string, link: string }) {
-  return <Link href={link} target="_blank" className="border py-1 px-2.5 rounded-md border-dashed text-sm grid grid-cols-[max-content_1fr] items-center gap-2.5 text-white text-opacity-50 hover:text-opacity-100 transition">
+  return <Link href={link} target="_blank" className="dark:border py-1 px-2.5 rounded-md border-dashed text-sm grid grid-cols-[max-content_1fr] items-center gap-2.5 dark:text-white text-foreground text-opacity-50 hover:text-opacity-100 transition shadow-md shadow-stone-200 dark:shadow-none">
     <LinkIcon />
     <span>{text}</span>
   </Link>;
