@@ -14,6 +14,9 @@ const config: Config = {
       },
       transitionTimingFunction: {
         "ease-out-back": "cubic-bezier(.44,.77,.6,1.2)",
+      },
+      spacing: {
+        "viewport": "theme('spacing.2')"
       }
     },
   },

@@ -20,4 +20,24 @@ export function sendDiscordWebhook(webhook_url: string, value: DiscordWebhookExe
 
 export function oneLineTrim(args: TemplateStringsArray, ...subs: unknown[]) {
   return String.raw(args, ...subs).replaceAll(/\n|\r\n/g, " ").trim().trim();
-} 
+}
+
+export function cn(...args: (null | undefined | boolean | number | string | Record<string, boolean>)[]) {
+  let result = "";
+  let first = true;
+  for (const arg of args) {
+    if (!Boolean(arg)) continue;
+    let value = ""
+    if (typeof arg === "object") {
+      let first2 = true;
+      for (const k in arg) {
+        if (!arg[k]) continue;
+        value += first2 ? k : ` ${k}`;
+        first2 = false;
+      }
+    } else value = `${arg}`;
+    result += first ? value : ` ${value}`;
+    first = false;
+  }
+  return result;
+}
