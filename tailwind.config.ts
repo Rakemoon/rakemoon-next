@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import catpuccin from "@catppuccin/tailwindcss";
 
 const config: Config = {
   content: [
@@ -16,10 +17,13 @@ const config: Config = {
         "ease-out-back": "cubic-bezier(.44,.77,.6,1.2)",
       },
       spacing: {
-        "viewport": "theme('spacing.2')"
+        "viewport": "2.25rem"
       }
     },
   },
-  plugins: [],
+  plugins: [catpuccin({
+    prefix: "ctp",
+    defaultFlavour: "latte",
+  })],
 };
 export default config;

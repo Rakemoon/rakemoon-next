@@ -41,3 +41,7 @@ export function cn(...args: (null | undefined | boolean | number | string | Reco
   }
   return result;
 }
+
+export function* range(length: number) {
+  for (let i = 0; i < length; i++) yield i;
+}
