@@ -5,6 +5,7 @@ import Navbar from "@/components/v2/Navbar/Navbar";
 import Stars from "@/components/v2/Textures/Stars";
 import { getLang } from "@/langs";
 import { cn } from "@/util";
+import Experience from "./sections/Experience";
 
 const desc = getLang("HERO_DESCRIPTION")();
 
@@ -36,7 +37,7 @@ export default function AboutPage() {
       </div>
     </Header>
     <Overview />
-    <div className="min-h-screen bg-gradient-to-b from-ctp-base to-ctp-base via-ctp-sky"></div>
+    <Experience />
     <Footer className="mt-auto" />
   </main>
 }

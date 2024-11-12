@@ -1,4 +1,8 @@
+"use client";
+
 import { cn } from "@/util";
+import { useScroll, useVelocity, motion } from "framer-motion";
+import { useEffect, useState } from "react";
 import { Moon } from "react-feather";
 
 type Props = {
@@ -6,14 +10,35 @@ type Props = {
 }
 
 export default function Navbar({ className }: Props) {
-  return <nav className={cn(
-    "sticky top-0 w-full z-20 backdrop-blur",
-    "flex",
-    "justify-evenly",
-    "items-center",
-    "py-viewport",
-    className
-  )}>
+  const [hide, setHide] = useState(false);
+  const { scrollY } = useScroll();
+  const velocityFactor = useVelocity(scrollY);
+
+  useEffect(() => {
+    const destroyReq = velocityFactor
+      .on("change", x => {
+        if (x > 0) setHide(true);
+        if (x < 0) setHide(false);
+      });
+
+    return () => {
+      destroyReq();
+    }
+  })
+
+  return <motion.nav
+    className={cn(
+      "sticky top-0 w-full z-20 backdrop-blur",
+      "flex",
+      "justify-evenly",
+      "items-center",
+      "py-viewport",
+      "origin-top",
+      className
+    )}
+    animate={{ opacity: hide ? 0 : 1, scaleY: hide ? 0 : 1 }}
+    transition={{ delay: 0.1, duration: 1 }}
+  >
     <div className={cn(
       "text-ctp-text",
       "font-bold",
@@ -41,5 +66,5 @@ export default function Navbar({ className }: Props) {
       <li>Categories</li>
       <li>About</li>
     </ul>
-  </nav>
+  </motion.nav>
 }
