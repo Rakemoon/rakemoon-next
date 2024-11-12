@@ -81,7 +81,7 @@ export default memo(function Stars({ className, starsAmount }: Props) {
       cancelAnimationFrame(reqID);
       window.removeEventListener("resize", onResize);
     }
-  }, []);
+  }, [starsAmount]);
 
   return <canvas
     ref={ref}

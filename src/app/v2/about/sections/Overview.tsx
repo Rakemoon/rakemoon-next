@@ -12,7 +12,6 @@ import { Circle, Triangle, Square } from "react-feather";
 // iMPORTANT TODO!
 import "leaflet/dist/leaflet.css";
 import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.webpack.css";
-import "leaflet-defaulticon-compatibility";
 
 const overviewDescription = getLang("OVERVIEW_DESCRIPTION")();
 

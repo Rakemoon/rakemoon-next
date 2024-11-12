@@ -1,5 +1,6 @@
 "use client";
 
+import "leaflet-defaulticon-compatibility";
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 
 type Props = {
