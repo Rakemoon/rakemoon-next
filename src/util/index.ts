@@ -49,3 +49,20 @@ export function* range(length: number) {
 export function timeoutPromise(timeMs: number): Promise<void> {
   return new Promise(resolve => setTimeout(resolve, timeMs));
 }
+
+export function requestGeoLocation(): Promise<GeolocationPosition> {
+  return new Promise((resolve, reject) => {
+    navigator.geolocation.getCurrentPosition(resolve, reject);
+  });
+}
+
+export async function waitPromisable<Err, Res>(promise: PromiseLike<Res>) {
+  let result: Res | null = null;
+  let error: Err | null = null;
+  try {
+    result = await promise;
+  } catch (e) {
+    error = e as never;
+  }
+  return [error, result] as [typeof error, typeof result];
+}

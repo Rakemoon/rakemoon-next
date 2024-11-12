@@ -5,8 +5,14 @@ import AnimatedTitle from "@/components/v2/Title/AnimatedTitle";
 import { getLang } from "@/langs";
 import { cn } from "@/util";
 import { motion, AnimationProps } from "framer-motion";
+import dynamic from "next/dynamic";
 import Image from "next/image";
-import { useEffect } from "react";
+import { Circle, Triangle, Square } from "react-feather";
+
+// iMPORTANT TODO!
+import "leaflet/dist/leaflet.css";
+import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.webpack.css";
+import "leaflet-defaulticon-compatibility";
 
 const overviewDescription = getLang("OVERVIEW_DESCRIPTION")();
 
@@ -49,15 +55,16 @@ function GridItem({ className, children, innerClassName }: GridItemProps) {
 
 }
 
+const LazyMap = dynamic(() => import("@/components/v2/Textures/GeoMap"), {
+  ssr: false,
+  loading: () => <p className="w-full aspect-video">Loading</p>,
+});
+
 export default function Overview() {
-  useEffect(() => {
-    navigator.geolocation.getCurrentPosition(({ coords }) => {
-      console.log(coords);
-    });
-  }, []);
+
   return <section
     id="overview"
-    className="flex flex-col items-center text-ctp-text"
+    className="flex flex-col items-center text-ctp-text overflow-hidden"
   >
     <div
       className={cn(
@@ -65,16 +72,18 @@ export default function Overview() {
         "max-w-[150ch]",
         "grid",
         "grid-cols-12",
-        "grid-rows-6",
+        "grid-rows-[repeat(6,min-content)]",
         "gap-4",
-        "p-1",
-        "my-20"
+        "my-20",
+        "p-2",
       )}
     >
       <GridItem
         className={cn(
           "col-span-10",
           "row-span-4",
+          "max-lg:col-span-12",
+          "max-lg:row-span-3"
         )}
         innerClassName={cn(
           "p-viewport",
@@ -117,12 +126,17 @@ export default function Overview() {
         "col-span-2",
         "row-span-2",
         "font-semibold",
+        "max-lg:[grid-column:10/13]",
+        "max-lg:row-span-1",
+        "max-md:[grid-column:1/5]",
+        "max-md:[grid-row:4/5]",
+        "max-sm:[grid-column:1/7]",
       )} innerClassName={cn(
         "p-viewport",
         "flex",
         "flex-col",
         "justify-center",
-        "gap-2"
+        "gap-2",
       )}>
         My nationality is <strong>Indonesia</strong>
         <IndonesiaFlag
@@ -136,6 +150,12 @@ export default function Overview() {
       <GridItem className={cn(
         "col-span-2",
         "row-span-2",
+        "max-lg:[grid-column:10/13]",
+        "max-lg:row-span-1",
+        "max-md:[grid-column:1/5]",
+        "max-md:[grid-row:5/6]",
+        "max-sm:[grid-row:4/5]",
+        "max-sm:[grid-column:7/13]",
       )}>
         <Image
           src="https://avatars.githubusercontent.com/u/39423103"
@@ -147,29 +167,58 @@ export default function Overview() {
         <p className="text-lg font-semibold text-center mt-2">Adzikri Fauzi Shiddiq</p>
       </GridItem>
       <GridItem className={cn(
-        "col-span-2",
+        "col-span-6",
         "row-span-2",
-      )} />
+        "max-lg:[grid-column:1/10]",
+        "max-lg:[grid-row:4/6]",
+        "max-md:[grid-row:4/6]",
+        "max-md:[grid-column:1/13]",
+        "max-md:[grid-row:7/10]",
+      )} innerClassName="flex flex-col">
+        <LazyMap className="w-full rounded-t-md aspect-video shadow-inner" />
+        <p className="p-viewport">
+          I am from <strong>Bandung</strong>, also known as the City of Flowers <i>(Kota Kembang)</i> in <strong>Indonesia</strong>.
+          But now this city has become a paradise for snacks.
+        </p>
+      </GridItem>
       <GridItem className={cn(
-        "col-span-2",
-        "row-span-2",
-      )} />
+        "col-span-6",
+        "row-span-1",
+        "max-md:[grid-column:5/13]",
+        "max-md:[grid-row:5/6]",
+        "max-sm:[grid-column:1/-1]",
+      )}
+        innerClassName="flex justify-center items-center flex-col gap-5 p-5">
+        <p className="text-2xl">Backend Developer</p>
+        <div className="flex gap-5">
+          <Circle size="3rem" className="text-ctp-red" />
+          <Triangle size="3rem" className="text-ctp-green" />
+          <Square size="3rem" className="text-ctp-blue" />
+        </div>
+      </GridItem>
+
       <GridItem className={cn(
-        "col-span-2",
-        "row-span-2",
-      )} />
-      <GridItem className={cn(
-        "col-span-2",
-        "row-span-2",
-      )} />
-      <GridItem className={cn(
-        "col-span-2",
-        "row-span-2",
-      )} />
-      <GridItem className={cn(
-        "col-span-2",
-        "row-span-2",
-      )} />
+        "col-span-6",
+        "row-span-1",
+        "max-md:[grid-column:5/13]",
+        "max-md:[grid-row:4/5]",
+        "max-sm:[grid-row:6/7]",
+        "max-sm:[grid-column:1/-1]",
+      )}
+        innerClassName="flex justify-center items-center flex-col gap-5 p-5">
+        <p className="text-2xl">Front Developer</p>
+        <div className="grid grid-cols-3 gap-1">
+          <div className="bg-ctp-rosewater h-5 w-5"></div>
+          <div className="bg-ctp-mauve h-5 w-5"></div>
+          <div className="bg-ctp-yellow h-5 w-5"></div>
+          <div className="bg-ctp-red h-5 w-5"></div>
+          <div className="bg-ctp-blue h-5 w-5"></div>
+          <div className="bg-ctp-green h-5 w-5"></div>
+          <div className="bg-ctp-rosewater h-5 w-5"></div>
+          <div className="bg-ctp-mauve h-5 w-5"></div>
+          <div className="bg-ctp-yellow h-5 w-5"></div>
+        </div>
+      </GridItem>
 
     </div>
   </section>;
