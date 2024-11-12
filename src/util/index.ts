@@ -45,3 +45,7 @@ export function cn(...args: (null | undefined | boolean | number | string | Reco
 export function* range(length: number) {
   for (let i = 0; i < length; i++) yield i;
 }
+
+export function timeoutPromise(timeMs: number): Promise<void> {
+  return new Promise(resolve => setTimeout(resolve, timeMs));
+}

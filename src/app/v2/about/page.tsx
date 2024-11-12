@@ -1,51 +1,42 @@
-"use client";
-
-import { motion } from "framer-motion";
-
+import Overview from "./sections/Overview";
 import Footer from "@/components/v2/Footer/Footer";
 import Header from "@/components/v2/Header/Header";
 import Navbar from "@/components/v2/Navbar/Navbar";
+import Stars from "@/components/v2/Textures/Stars";
+import { getLang } from "@/langs";
 import { cn } from "@/util";
 
+const desc = getLang("HERO_DESCRIPTION")();
+
 export default function AboutPage() {
+
   return <main className="min-h-screen flex flex-col">
     <Navbar className="!fixed" />
     <Header className={cn(
-      "min-h-screen flex-col",
-      "items-center",
+      "min-h-screen",
       "justify-center",
-      "text-ctp-base",
+      "items-center",
+      "text-ctp-text",
+      "px-viewport",
+      "gap-5"
     )}>
-      <p
-        className="text-7xl font-medium flex">
-        {"Hello there!".split("").map((x, i) =>
-          <motion.span
-            animate={{ y: [50, 0] }}
-            transition={{
-              duration: 0.1,
-              delay: i * 0.05,
-            }}
-            className="min-w-5"
-            key={x + i}>
-            {x}
-          </motion.span>
-        )}
-      </p>
-      <span
-        className="text-5xl font-medium flex">
-        {"Im Adzikri Fauzi Shiddiq".split("").map((x, i) => <motion.span
-          animate={{ y: [50, 0] }}
-          transition={{
-            duration: 0.1,
-            delay: i * 0.05,
-          }}
-          key={x + i}
-          className="min-w-5"
-        >
-          {x}
-        </motion.span>)}
-      </span>
+      <Stars className={cn(
+        "absolute inset-0 w-full h-full",
+        "text-ctp-sapphire dark:text-ctp-yellow"
+      )} starsAmount={500} />
+      <div className="z-10">
+        <p className={cn(
+          "text-5xl font-bold",
+          "drop-shadow-md",
+          "flex flex-wrap gap-3"
+        )}>
+          <span>Hi there!</span> <span className="text-ctp-subtext1">Im Adzikri.</span>
+        </p>
+        <p className="text-xl font-medium">{desc}</p>
+      </div>
     </Header>
+    <Overview />
+    <div className="min-h-screen bg-gradient-to-b from-ctp-base to-ctp-base via-ctp-sky"></div>
     <Footer className="mt-auto" />
   </main>
 }

@@ -13,6 +13,6 @@ export default function Header({ children, className }: Props) {
     className,
   )}>
     {children}
-    <SkyLine className="-mb-1 absolute bottom-1" />
+    <SkyLine className="absolute -bottom-[1px]" />
   </header>;
 }
