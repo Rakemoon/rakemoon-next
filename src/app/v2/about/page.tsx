@@ -6,6 +6,8 @@ import Stars from "@/components/v2/Textures/Stars";
 import { getLang } from "@/langs";
 import { cn } from "@/util";
 import Experience from "./sections/Experience";
+import TechStack from "./sections/TechStack";
+import Projects from "./sections/Projects";
 
 const desc = getLang("HERO_DESCRIPTION")();
 
@@ -38,6 +40,8 @@ export default function AboutPage() {
     </Header>
     <Overview />
     <Experience />
+    <TechStack />
+    <Projects />
     <Footer className="mt-auto" />
   </main>
 }

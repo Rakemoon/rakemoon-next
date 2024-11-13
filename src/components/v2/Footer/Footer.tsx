@@ -37,7 +37,7 @@ const links = [
 export default function Footer({ className }: Props) {
   return <footer className={cn(
     "bg-gradient-to-t from-ctp-sky to-ctp-base",
-    "h-96",
+    "min-h-96",
     "flex",
     "flex-col",
     "items-center",

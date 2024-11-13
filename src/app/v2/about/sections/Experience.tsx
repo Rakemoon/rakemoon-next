@@ -38,7 +38,7 @@ export default function Experience() {
       "gap-5",
     )}>
     <SkyLine className="absolute top-0 rotate-180 left-0 right-0 w-full max-lg:scale-y-150 max-lg:translate-y-1/4 -mt-1" />
-    <SkyLine className="absolute bottom-0 left-0 right-0 mt-2" />
+    <SkyLine className="absolute bottom-0 left-0 right-0 -mb-1" />
     <AnimatedTitle text="Experiences" className="z-10 !text-ctp-blue" />
     <motion.div className="w-[2px] bg-ctp-base absolute top-0 left-0 right-0 mx-auto h-full" style={{ scaleY, transformOrigin: "top" }}></motion.div>
     <motion.div className="rounded-full w-max bg-ctp-base absolute left-0 right-0 m-auto p-2 animate-pulse" style={{ y: hookY }}>
