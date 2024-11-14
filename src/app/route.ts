@@ -1,5 +1,5 @@
 import { redirect } from "next/navigation";
 
 export function GET() {
-  return redirect("/v2/about");
+  return redirect("/about");
 }

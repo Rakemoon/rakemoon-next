@@ -1,10 +1,10 @@
-import ArticleCard from "@/components/v2/Card/ArticleCard";
-import Footer from "@/components/v2/Footer/Footer";
-import Header from "@/components/v2/Header/Header";
-import ArticleTag from "@/components/v2/Link/ArticleTag";
-import LinkOnList from "@/components/v2/Link/LinkOnList";
-import Navbar from "@/components/v2/Navbar/Navbar";
-import SectionTitle from "@/components/v2/Title/SectionTitle";
+import ArticleCard from "@/components/Card/ArticleCard";
+import Footer from "@/components/Footer/Footer";
+import Header from "@/components/Header/Header";
+import ArticleTag from "@/components/Link/ArticleTag";
+import LinkOnList from "@/components/Link/LinkOnList";
+import Navbar from "@/components/Navbar/Navbar";
+import SectionTitle from "@/components/Title/SectionTitle";
 import { cn, range } from "@/util";
 
 export default function HomePageV2() {

@@ -1,8 +1,8 @@
 "use client";
 
-import ProjectCard from "@/components/v2/Card/ProjectCard";
-import SkyLine from "@/components/v2/Textures/Skyline";
-import AnimatedTitle from "@/components/v2/Title/AnimatedTitle";
+import ProjectCard from "@/components/Card/ProjectCard";
+import SkyLine from "@/components/Textures/Skyline";
+import AnimatedTitle from "@/components/Title/AnimatedTitle";
 import { getLang } from "@/langs";
 import { cn } from "@/util";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";

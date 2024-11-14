@@ -1,7 +1,7 @@
 "use client";
 
-import IndonesiaFlag from "@/components/v2/Textures/IndonesiaFlag";
-import AnimatedTitle from "@/components/v2/Title/AnimatedTitle";
+import IndonesiaFlag from "@/components/Textures/IndonesiaFlag";
+import AnimatedTitle from "@/components/Title/AnimatedTitle";
 import { getLang } from "@/langs";
 import { cn } from "@/util";
 import { motion, AnimationProps } from "framer-motion";
@@ -54,7 +54,7 @@ function GridItem({ className, children, innerClassName }: GridItemProps) {
 
 }
 
-const LazyMap = dynamic(() => import("@/components/v2/Textures/GeoMap"), {
+const LazyMap = dynamic(() => import("@/components/Textures/GeoMap"), {
   ssr: false,
   loading: () => <p className="w-full aspect-video">Loading</p>,
 });

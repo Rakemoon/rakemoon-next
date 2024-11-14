@@ -1,6 +1,6 @@
 import { cn } from "@/util"
 import Image from "next/image"
-import Link from "@/components/v2/Link/Link"
+import Link from "@/components/Link/Link"
 
 type Props = {
   title: React.ReactNode,

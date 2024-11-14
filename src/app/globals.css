@@ -2,24 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+::-webkit-scrollbar {
+  background: transparent;
+  width: 4px;
+  height: 4px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.section {
-  @apply pt-24 pb-10 min-h-screen;
+::-webkit-scrollbar-thumb {
+  background: theme('colors.ctp-red.DEFAULT');
+  @apply rounded-md;
 }

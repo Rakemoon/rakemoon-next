@@ -1,8 +1,8 @@
 "use client";
 
-import ExperienceCard from "@/components/v2/Card/ExperienceCard";
-import SkyLine from "@/components/v2/Textures/Skyline";
-import AnimatedTitle from "@/components/v2/Title/AnimatedTitle";
+import ExperienceCard from "@/components/Card/ExperienceCard";
+import SkyLine from "@/components/Textures/Skyline";
+import AnimatedTitle from "@/components/Title/AnimatedTitle";
 import { getLang } from "@/langs";
 import { cn } from "@/util";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";

@@ -1,7 +1,7 @@
 "use client"
 
 import techStack from "@/components/ui/TechStack";
-import AnimatedTitle from "@/components/v2/Title/AnimatedTitle";
+import AnimatedTitle from "@/components/Title/AnimatedTitle";
 import { cn } from "@/util";
 import { motion } from "framer-motion";
 

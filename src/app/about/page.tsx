@@ -1,8 +1,8 @@
 import Overview from "./sections/Overview";
-import Footer from "@/components/v2/Footer/Footer";
-import Header from "@/components/v2/Header/Header";
-import Navbar from "@/components/v2/Navbar/Navbar";
-import Stars from "@/components/v2/Textures/Stars";
+import Footer from "@/components/Footer/Footer";
+import Header from "@/components/Header/Header";
+import Navbar from "@/components/Navbar/Navbar";
+import Stars from "@/components/Textures/Stars";
 import { getLang } from "@/langs";
 import { cn } from "@/util";
 import Experience from "./sections/Experience";
