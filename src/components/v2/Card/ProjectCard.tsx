@@ -11,14 +11,17 @@ type Props = ProjectList & {
 export default function ProjectCard(props: Props) {
   return <div
     className={cn(
-      "bg-ctp-base",
+      "dark:bg-ctp-base",
+      "backdrop-blur",
+      "dark:backdrop-blur-none",
       "p-5",
       "text-ctp-text",
       "rounded-md",
       "flex",
       "flex-col",
       "gap-1",
-      "border border-ctp-overlay2",
+      "dark:border dark:border-ctp-overlay2",
+      "shadow-md dark:shadow-none",
       props.className
     )}>
     <Image

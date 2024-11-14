@@ -41,8 +41,11 @@ export default function Projects() {
     className={cn(
       "min-h-screen",
       "bg-gradient-to-b",
-      "from-ctp-peach",
-      "to-ctp-teal",
+      "dark:from-ctp-peach",
+      "dark:to-ctp-teal",
+      "from-ctp-surface2",
+      "to-ctp-surface2",
+      "via-ctp-mantle",
       "relative",
       "flex",
       "flex-col",
@@ -58,7 +61,7 @@ export default function Projects() {
     </div>
     {/* items */}
     <div className="max-w-full self-center rounded-md my-56 z-10">
-      <AnimatedTitle text="Projects" className="!text-ctp-text drop-shadow-md" />
+      <AnimatedTitle text="Projects" className="dark:!text-ctp-text drop-shadow-md" />
       <motion.div
         className={cn(
           "mt-5",

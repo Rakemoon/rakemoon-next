@@ -30,7 +30,16 @@ export default function TechStack() {
           <v.icon
             width="10rem"
             height="10rem"
-            className="w-full h-full"
+            className={cn(
+              "w-full h-full",
+              "shadow-md",
+              "bg-ctp-crust",
+              "p-2",
+              "rounded-md",
+              "dark:bg-transparent",
+              "dark:shadow-none",
+              "dark:rounded-none"
+            )}
           />
         </motion.li>)
       }
