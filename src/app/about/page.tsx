@@ -8,8 +8,13 @@ import { cn } from "@/util";
 import Experience from "./sections/Experience";
 import TechStack from "./sections/TechStack";
 import Projects from "./sections/Projects";
+import { Metadata } from "next";
 
 const desc = getLang("HERO_DESCRIPTION")();
+
+export const metadata: Metadata = {
+  title: "Adzikri Fauzi Shiddiq | Fullstack Developer",
+}
 
 export default function AboutPage() {
 

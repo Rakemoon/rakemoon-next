@@ -5,7 +5,7 @@ type Props = {
 }
 
 export default function LayoutV2({ children }: Props) {
-  return <html>
+  return <html lang="en-US">
     <body className="bg-ctp-base dark:ctp-mocha">
       {children}
     </body>

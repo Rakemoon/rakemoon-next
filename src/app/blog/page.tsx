@@ -46,20 +46,20 @@ export default function HomePageV2() {
     )}>
       <SectionTitle>BROWSE BY CATEGORY</SectionTitle>
       <div className="flex flex-wrap gap-2.5">
-        <ArticleTag href="css">CSS</ArticleTag>
-        <ArticleTag href="react">React</ArticleTag>
-        <ArticleTag href="animation">Animation</ArticleTag>
-        <ArticleTag href="career">Career</ArticleTag>
-        <ArticleTag href="javascript">Javascript</ArticleTag>
-        <ArticleTag href="nextjs">Next.Js</ArticleTag>
-        <ArticleTag href="General">General</ArticleTag>
+        <ArticleTag href="/">CSS</ArticleTag>
+        <ArticleTag href="/">React</ArticleTag>
+        <ArticleTag href="/">Animation</ArticleTag>
+        <ArticleTag href="/">Career</ArticleTag>
+        <ArticleTag href="/">Javascript</ArticleTag>
+        <ArticleTag href="/">Next.Js</ArticleTag>
+        <ArticleTag href="/">General</ArticleTag>
       </div>
       <div className="flex flex-col gap-4 sticky top-32">
         <SectionTitle>POPULAR CONTENT</SectionTitle>
         <ul className="gap-2 flex flex-col">
           {
             [...range(1)].map(x => <li key={x}>
-              <LinkOnList href="/v1">Lorem Ipsum Dolor Sit Amet</LinkOnList>
+              <LinkOnList href="/">Lorem Ipsum Dolor Sit Amet</LinkOnList>
             </li>)
           }
         </ul>

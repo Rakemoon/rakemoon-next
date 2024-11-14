@@ -4,6 +4,7 @@ import { cn } from "@/util";
 import { useScroll, useVelocity, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Moon } from "react-feather";
+import Link from "../Link/Link";
 
 type Props = {
   className?: string;
@@ -39,12 +40,14 @@ export default function Navbar({ className }: Props) {
     animate={{ opacity: hide ? 0 : 1, scaleY: hide ? 0 : 1 }}
     transition={{ delay: 0.1, duration: 1 }}
   >
-    <div className={cn(
-      "text-ctp-text",
-      "font-bold",
-      "text-4xl",
-      "relative"
-    )}>
+    <Link
+      href="/"
+      className={cn(
+        "text-ctp-text",
+        "font-bold",
+        "text-4xl",
+        "relative"
+      )}>
       <span>
         RakemOon
       </span>
@@ -54,7 +57,7 @@ export default function Navbar({ className }: Props) {
         "-top-2",
         "-right-2"
       )} />
-    </div>
+    </Link>
     <ul className={cn(
       "flex",
       "gap-2.5",
@@ -63,8 +66,8 @@ export default function Navbar({ className }: Props) {
       "max-sm:hidden",
       "items-center",
     )}>
-      <li>Categories</li>
-      <li>About</li>
+      <li><Link href="/blog">Blog</Link></li>
+      <li><Link href="/about">About</Link></li>
     </ul>
   </motion.nav>
 }
