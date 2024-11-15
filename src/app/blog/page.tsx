@@ -6,6 +6,7 @@ import LinkOnList from "@/components/Link/LinkOnList";
 import Navbar from "@/components/Navbar/Navbar";
 import SectionTitle from "@/components/Title/SectionTitle";
 import { cn, range } from "@/util";
+import contents from "@/blogs";
 
 export default function HomePageV2() {
   return <main className={cn(
@@ -27,12 +28,12 @@ export default function HomePageV2() {
       "flex gap-viewport flex-col"
     )}>
       <SectionTitle>ARTICLE AND TUTORIALS</SectionTitle>
-      {[...range(1)].map(x => <ArticleCard
-        key={x}
-        title="Lorem ipsum dolor sit amet"
-        link="/v1"
-        summary="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eros nisl, tincidunt in facilisis a, malesuada eget dolor. Etiam ut ipsum odio. Nam gravida placerat tristique. Sed aliquam venenatis leo eget aliquam. Vivamus vitae finibus turpis. Aliquam erat volutpat. Nunc ut ex turpis. Fusce sit amet fermentum est. Donec pulvinar ex nisi, eu accumsan libero luctus vitae. In ultricies purus mi, pellentesque porta leo semper sed. Nam sit amet pellentesque enim."
-        image="/assets/projects/calorie-tracker/thumb.png"
+      {Object.entries(contents).map(([path, data]) => <ArticleCard
+        key={path}
+        title={data.metadata.title}
+        link={`/blog/${path}`}
+        summary={data.metadata.description}
+        image={data.metadata.thumbnail}
       />
       )}
     </div>

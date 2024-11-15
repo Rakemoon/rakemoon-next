@@ -1,4 +1,5 @@
 import type { ITechStack } from "@/components/ui/TechStack";
+import { MDXProps } from "mdx/types";
 
 export type LangRecord = Record<Uppercase<string>, (...args: string[]) => unknown>;
 
@@ -73,3 +74,18 @@ export type Experience = {
   does: string[];
   imagePath: string;
 }
+
+export type BlogContentMetadata = {
+  title: string;
+  description: string;
+  pubDate: string;
+  updatedDate?: string;
+  thumbnail: string;
+}
+
+export type ContentsCollection = Record<string, {
+  metadata: BlogContentMetadata;
+  component: (props: MDXProps) => JSX.Element;
+  category: string;
+}>
+
