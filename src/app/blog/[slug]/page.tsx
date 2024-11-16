@@ -16,7 +16,7 @@ type Props = {
 
 export default async function BlogPostPage(props: Props) {
   const { slug } = await props.params;
-  const content = contents[slug as keyof typeof contents];
+  const content = contents[slug];
   if (!content) return notFound();
 
   return <main className="min-h-screen">
@@ -29,9 +29,9 @@ export default async function BlogPostPage(props: Props) {
         "flex-col",
         "text-ctp-text",
       )}>
-        <span className={cn(
+        <h1 className={cn(
           "text-5xl font-semibold"
-        )}>{content.metadata.title}</span>
+        )}>{content.metadata.title}</h1>
         <p><i>Filed under</i> <strong>{content.category}</strong> on <strong>{formatDate(new Date(content.metadata.pubDate))}</strong></p>
       </div>
       {/* <Image */}
@@ -47,18 +47,15 @@ export default async function BlogPostPage(props: Props) {
       {/*   )} */}
       {/* /> */}
     </Header>
-    <div className={cn(
+    <article className={cn(
       "text-ctp-text",
       "grid",
       "grid-cols-[1fr_min(calc(100%-theme('spacing.viewport')*2),_70ch)_1fr]",
       "[&>*]:[grid-column:2]",
-      "[&>h2]:text-3xl",
-      "[&>h2]:my-5",
-      "[&>p]:mb-5",
       "gap-x-viewport",
     )}>
       <content.component />
-    </div>
+    </article>
     <Footer />
   </main>
 }
