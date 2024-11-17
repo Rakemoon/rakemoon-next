@@ -7,6 +7,7 @@ import Blockquote from "./components/MDX/Blockquote";
 import Table from "./components/MDX/Table";
 import OrderedList from "./components/MDX/OrderedList";
 import UnorderedList from "./components/MDX/UnorderedList";
+import Code from "./components/MDX/Code";
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   let headCount = 0;
@@ -25,7 +26,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
 
     p: props => <Paragraph>{props.children}</Paragraph>,
     img: props => <Image src={props.src!} alt={props.alt!} />,
-    pre: props => <Pre>{props.children}</Pre>,
+    pre: props => <Pre>{props.children as never}</Pre>,
     blockquote: props => <Blockquote {...props}>{props.children}</Blockquote>,
     table: props => <Table>{props.children}</Table>,
     thead: props => <Table.Head>{props.children}</Table.Head>,
@@ -35,5 +36,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     tr: props => <Table.Row>{props.children}</Table.Row>,
     ol: props => <OrderedList>{props.children}</OrderedList>,
     ul: props => <UnorderedList>{props.children}</UnorderedList>,
+
+    code: props => <Code language={props.className}>{props.children}</Code>
   }
 }
