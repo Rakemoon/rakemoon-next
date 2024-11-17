@@ -81,6 +81,7 @@ export type BlogContentMetadata = {
   pubDate: string;
   updatedDate?: string;
   thumbnail: string;
+  showTOC?: boolean;
 }
 
 export type ContentsCollection = Record<string, {
@@ -89,3 +90,8 @@ export type ContentsCollection = Record<string, {
   category: string;
 }>
 
+export type TOCList = {
+  name: string;
+  href: string;
+  level: 1 | 2 | 3 | 4 | 5 | 6;
+}

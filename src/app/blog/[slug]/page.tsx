@@ -4,6 +4,7 @@ import contents from "@/blogs";
 import Footer from "@/components/Footer/Footer";
 import Header from "@/components/Header/Header";
 import Navbar from "@/components/Navbar/Navbar";
+import TableOfContents from "@/components/Navbar/TableOfContent";
 import { cn } from "@/util";
 // import Image from "next/image";
 import { notFound } from "next/navigation";
@@ -19,7 +20,12 @@ export default async function BlogPostPage(props: Props) {
   const content = contents[slug];
   if (!content) return notFound();
 
-  return <main className="min-h-screen">
+  const showTOC = content.metadata.showTOC ?? false;
+
+  return <main className={cn(
+    "min-h-screen",
+    "@container/main",
+  )}>
     <Navbar />
     <Header className="flex-col gap-5 !items-center max-lg:justify-center">
       <div className={cn(
@@ -51,14 +57,19 @@ export default async function BlogPostPage(props: Props) {
       "text-ctp-text",
       "grid",
       "grid-cols-[1fr_min(calc(100%-theme('spacing.viewport')*2),_70ch)_1fr]",
+      {
+        "@[66.25rem]/main:grid-cols-[1fr_min(calc(100%-theme('spacing.viewport')*2),_70ch)_30ch_1fr]": showTOC,
+        "grid-cols-[1fr_min(calc(100%-theme('spacing.viewport')*2),_70ch)_1fr]": showTOC
+      },
       "[&>*]:[grid-column:2]",
       "gap-x-viewport",
       "pt-5",
     )}>
+      {showTOC && <TableOfContents scrollOffset={0} />}
       <content.component />
     </article>
     <Footer />
-  </main>
+  </main>;
 }
 
 function formatDate(date: Date | "now") {
