@@ -1,5 +1,6 @@
 import type { Config } from "tailwindcss";
 import catpuccin from "@catppuccin/tailwindcss";
+import containerQueries from "@tailwindcss/container-queries";
 
 const config: Config = {
   content: [
@@ -24,6 +25,6 @@ const config: Config = {
   plugins: [catpuccin({
     prefix: "ctp",
     defaultFlavour: "latte",
-  })],
+  }), containerQueries],
 };
 export default config;

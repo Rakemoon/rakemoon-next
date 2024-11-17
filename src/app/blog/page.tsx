@@ -5,10 +5,12 @@ import ArticleTag from "@/components/Link/ArticleTag";
 import LinkOnList from "@/components/Link/LinkOnList";
 import Navbar from "@/components/Navbar/Navbar";
 import SectionTitle from "@/components/Title/SectionTitle";
-import { cn, range } from "@/util";
+import { cn } from "@/util";
 import contents from "@/blogs";
 
 export default function HomePageV2() {
+  const entries = Object.entries(contents);
+  const categories = new Set(entries.map(([, data]) => data.category));
   return <main className={cn(
     "grid min-h-screen",
     "grid-rows-[min-content_min-content_1fr_min-content]",
@@ -28,7 +30,7 @@ export default function HomePageV2() {
       "flex gap-viewport flex-col"
     )}>
       <SectionTitle>ARTICLE AND TUTORIALS</SectionTitle>
-      {Object.entries(contents).map(([path, data]) => <ArticleCard
+      {entries.map(([path, data]) => <ArticleCard
         key={path}
         title={data.metadata.title}
         link={`/blog/${path}`}
@@ -47,20 +49,22 @@ export default function HomePageV2() {
     )}>
       <SectionTitle>BROWSE BY CATEGORY</SectionTitle>
       <div className="flex flex-wrap gap-2.5">
-        <ArticleTag href="/">CSS</ArticleTag>
-        <ArticleTag href="/">React</ArticleTag>
-        <ArticleTag href="/">Animation</ArticleTag>
-        <ArticleTag href="/">Career</ArticleTag>
-        <ArticleTag href="/">Javascript</ArticleTag>
-        <ArticleTag href="/">Next.Js</ArticleTag>
-        <ArticleTag href="/">General</ArticleTag>
+        {[...categories].map(x =>
+          <ArticleTag
+            key={x}
+            href={`/blog?filter=${x}`}>
+            {x.toUpperCase()}
+          </ArticleTag>
+        )}
       </div>
       <div className="flex flex-col gap-4 sticky top-32">
         <SectionTitle>POPULAR CONTENT</SectionTitle>
         <ul className="gap-2 flex flex-col">
           {
-            [...range(1)].map(x => <li key={x}>
-              <LinkOnList href="/">Lorem Ipsum Dolor Sit Amet</LinkOnList>
+            entries.map(([path, data]) => <li key={path}>
+              <LinkOnList
+                href={`/blog/${path}`}
+              >{data.metadata.title}</LinkOnList>
             </li>)
           }
         </ul>

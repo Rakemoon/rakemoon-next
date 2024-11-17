@@ -7,22 +7,21 @@ import { Hash } from "react-feather";
 type Props = {
   level: 1 | 2 | 3 | 4 | 5 | 6;
   children?: React.ReactNode;
-  headCount?: number;
+  id?: string;
 }
 
-export default function Heading({ level, children, headCount }: Props) {
+export default function Heading({ level, children, id }: Props) {
   switch (level) {
-    case 1: return <h1 className="text-4xl">{children}</h1>;
-    case 2: return <Heading2 headCount={headCount}>{children}</Heading2>;
-    case 3: return <h3 className="text-2xl">{children}</h3>;
-    case 4: return <h4 className="text-xl">{children}</h4>;
-    case 5: return <h5 className="text-lg">{children}</h5>;
-    case 6: return <h6 className="text-md">{children}</h6>;
+    case 1: return <h1 id={id} className="text-4xl mb-5">{children}</h1>;
+    case 2: return <Heading2 id={id}>{children}</Heading2>;
+    case 3: return <h3 id={id} className="text-2xl mb-5">{children}</h3>;
+    case 4: return <h4 id={id} className="text-xl mb-5">{children}</h4>;
+    case 5: return <h5 id={id} className="text-lg mb-5">{children}</h5>;
+    case 6: return <h6 id={id} className="text-md mb-5">{children}</h6>;
   }
 }
 
-export function Heading2({ children, headCount }: Omit<Props, "level">) {
-  const id = (children!.toString().toLowerCase().replaceAll(" ", "-") + "-" + headCount)
+export function Heading2({ children, id }: Omit<Props, "level">) {
   const springEase = useSpring(0, {
     duration: 1,
   });
@@ -35,7 +34,7 @@ export function Heading2({ children, headCount }: Omit<Props, "level">) {
     onMouseLeave={() => springEase.set(0)}
     className={cn(
       "font-semibold",
-      "text-3xl my-5",
+      "text-3xl mb-5",
       "flex",
       "items-center",
       "gap-1",

@@ -3,12 +3,16 @@
 
 // @ts-expect-error 2614
 import FirstPost, { frontmatter as FirstPostMetadata } from "@/blogs/misc/first-post/index.mdx";
+// @ts-expect-error 2614
+import HowToUseMarkdown, { frontmatter as HowToUseMarkdownMetadata } from "@/blogs/misc/how-to-use-markdown/index.mdx";
+
 
 
 import { ContentsCollection } from "@/types";
 
 const contents: ContentsCollection = {
   "first-post": { component: FirstPost, metadata: FirstPostMetadata, category: "misc" },
+  "how-to-use-markdown": { component: HowToUseMarkdown, metadata: HowToUseMarkdownMetadata, category: "misc" },
 };
 
 export default contents;

@@ -31,8 +31,8 @@ export default async function BlogPostPage(props: Props) {
       )}>
         <h1 className={cn(
           "text-5xl font-semibold"
-        )}>{content.metadata.title}</h1>
-        <p><i>Filed under</i> <strong>{content.category}</strong> on <strong>{formatDate(new Date(content.metadata.pubDate))}</strong></p>
+        )}>{content.metadata?.title}</h1>
+        <p><i>Filed under</i> <strong>{content.category}</strong> on <strong>{formatDate(new Date(content.metadata?.pubDate))}</strong></p>
       </div>
       {/* <Image */}
       {/*   src={content.metadata.thumbnail} */}
@@ -53,6 +53,7 @@ export default async function BlogPostPage(props: Props) {
       "grid-cols-[1fr_min(calc(100%-theme('spacing.viewport')*2),_70ch)_1fr]",
       "[&>*]:[grid-column:2]",
       "gap-x-viewport",
+      "pt-5",
     )}>
       <content.component />
     </article>
