@@ -6,6 +6,7 @@ import Header from "@/components/Header/Header";
 import Navbar from "@/components/Navbar/Navbar";
 import TableOfContents from "@/components/Navbar/TableOfContent";
 import { cn } from "@/util";
+import { Metadata } from "next";
 // import Image from "next/image";
 import { notFound } from "next/navigation";
 
@@ -14,6 +15,22 @@ type Props = {
     slug: string;
   }>;
 };
+
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const content = contents[slug];
+  return {
+    title: content.metadata.title,
+    authors: { name: "Rakemoon", url: "/" },
+    description: content.metadata.description,
+    openGraph: {
+      images: [
+        { url: content.metadata.thumbnail },
+      ]
+    }
+  }
+}
 
 export default async function BlogPostPage(props: Props) {
   const { slug } = await props.params;
