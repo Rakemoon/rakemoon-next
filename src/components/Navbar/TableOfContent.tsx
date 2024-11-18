@@ -62,8 +62,7 @@ export default function TableOfContents({ scrollOffset }: Props) {
   }
 
   return <div id="table-of-contents" className={cn(
-    "![grid-column:3/4]",
-    "ml-viewport",
+    "![grid-column:4/5]",
     "hidden",
     "@[66.25rem]/article:block",
     "h-fit",

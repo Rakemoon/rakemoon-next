@@ -74,7 +74,7 @@ export default async function BlogPostPage(props: Props) {
         "grid",
         "grid-cols-[1fr_min(calc(100%-theme('spacing.viewport')*2),_70ch)_1fr]",
         {
-          "@[66.25rem]/article:grid-cols-[1fr_min(calc(100%-theme('spacing.viewport')*2),_70ch)_30ch_1fr]": showTOC,
+          "@[66.25rem]/article:grid-cols-[1fr_min(calc(100%-theme('spacing.viewport')*2),_70ch)_1fr_30ch_1fr]": showTOC,
           "grid-cols-[1fr_min(calc(100%-theme('spacing.viewport')*2),_70ch)_1fr]": showTOC
         },
         "[&>*]:[grid-column:2]",
