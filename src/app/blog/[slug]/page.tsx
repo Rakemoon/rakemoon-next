@@ -16,7 +16,6 @@ type Props = {
   }>;
 };
 
-
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const content = contents[slug];
@@ -41,7 +40,6 @@ export default async function BlogPostPage(props: Props) {
 
   return <main className={cn(
     "min-h-screen",
-    "@container/main",
   )}>
     <Navbar />
     <Header className="flex-col gap-5 !items-center max-lg:justify-center">
@@ -70,21 +68,24 @@ export default async function BlogPostPage(props: Props) {
       {/*   )} */}
       {/* /> */}
     </Header>
-    <article className={cn(
-      "text-ctp-text",
-      "grid",
-      "grid-cols-[1fr_min(calc(100%-theme('spacing.viewport')*2),_70ch)_1fr]",
-      {
-        "@[66.25rem]/main:grid-cols-[1fr_min(calc(100%-theme('spacing.viewport')*2),_70ch)_30ch_1fr]": showTOC,
-        "grid-cols-[1fr_min(calc(100%-theme('spacing.viewport')*2),_70ch)_1fr]": showTOC
-      },
-      "[&>*]:[grid-column:2]",
-      "gap-x-viewport",
-      "pt-5",
-    )}>
-      {showTOC && <TableOfContents scrollOffset={0} />}
-      <content.component />
-    </article>
+    <div className="@container/article">
+      <article className={cn(
+        "text-ctp-text",
+        "grid",
+        "grid-cols-[1fr_min(calc(100%-theme('spacing.viewport')*2),_70ch)_1fr]",
+        {
+          "@[66.25rem]/article:grid-cols-[1fr_min(calc(100%-theme('spacing.viewport')*2),_70ch)_30ch_1fr]": showTOC,
+          "grid-cols-[1fr_min(calc(100%-theme('spacing.viewport')*2),_70ch)_1fr]": showTOC
+        },
+        "[&>*]:[grid-column:2]",
+        "gap-x-viewport",
+        "pt-5",
+      )}>
+        {showTOC && <TableOfContents scrollOffset={0} />}
+        <content.component />
+      </article>
+
+    </div>
     <Footer />
   </main>;
 }

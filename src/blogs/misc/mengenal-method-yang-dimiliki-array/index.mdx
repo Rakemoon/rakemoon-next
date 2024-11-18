@@ -1,0 +1,125 @@
+---
+title: "Mengenal Metode yang dimiliki oleh Array"
+description: "Array memiliki builtin metode yang sangat membantu dalam, menyelesaikan komputasi. Disini kalian akan belajar tentang metode metode tersebut."
+pubDate: "2024-11-18T02:22:19.259Z"
+thumbnail: "/assets/projects/calorie-tracker/thumb.png"
+showTOC: true
+---
+
+## Apa itu Array ? 
+
+**Array** adalah salah satu struktur data yang paling sering digunakan.
+Array memungkinkan kita untuk mengelola data dalam bentuk daftar atau koleksi.
+Misalkan saja jika kita mempunyai data hewan seperti `kambing` `sapi` `kerbau` maka kita dapat mendeklarasikannya seperti ini.
+
+```js
+const hewan = ["kambing", "sapi", "kerbau"];
+```
+
+Hebat bukan ? dengan mengelompokan data seperti ini kita jadi tahu bahwasannya variabel `hewan` itu tidak hanya diisi oleh satu data,
+melainkan 2 atau bahkan lebih!.
+
+Untuk mengakses data yang terdapat pada array bisa kita gunakan bilangan real.
+
+Contoh: `hewan[0]` maka ini akan menunjuk data `"kambing"`
+
+import IndexDemo from "./IndexDemo.tsx";
+
+<IndexDemo />
+
+> #### **Mengapa index array dimulai dari 0 ?**
+>
+> Ketika sebuah array dibuat, komputer menyimpan data-data nya di memori secara berurutan.
+> Untuk mengakses data tertentu, alamat memori dihitung menggunakan formula berikut:
+>
+> ```js
+> AlamatData = AlamatAwalArray + (Indeks + UkuranData)
+> ```
+>
+> Jika indeks dimulai dari 0:
+> - Data pertama _**(index = 0)**_ langsung berada di alamat awal array.
+> - Ini membuat perhitungan lebih sederhana dan efisien, karena tidak perlu mengurangi nilai indeks dengan 1 untuk mendapatkan alamat data.
+
+## Properti Length
+
+Sebelum kita memasuki metode array, ada satu properti yang sering sekali digunakan yaitu properti `.length`.
+Properti ini menyimpan jumlah data yang ada pada array.
+
+import LengthDemo from "./LengthDemo.tsx";
+
+<LengthDemo />
+
+## Metode Array 
+
+Array sendiri memiliki banyak sekali metode namun pada bahasan kali ini.
+kita hanya akan membahas beberapa metode saja seperti `push()`, `pop()`, `shift()`, `unshift()`, `splice()`, `slice()`
+
+> W3School menyediakan bahasan lengkap tentang method array.
+> Jika dirasa kalian sudah mampu memahami method yang kita berikan
+> Bisa kalian kunjungi saja [W3school Array Method](https://www.w3schools.com/js/js_array_methods.asp)
+
+### Metode Push
+
+Metode `push()` digunakan untuk menambahkan satu atau lebih data baru ke indeks paling akhir.
+
+import PushDemo from "./PushDemo.tsx";
+
+<PushDemo />
+
+### Metode Pop 
+
+Metode `pop()` digunakan untuk menghapus data dari indeks paling akhir.
+
+import PopDemo from "./PopDemo.tsx";
+
+<PopDemo />
+
+### Metode Shift 
+
+Metode `shift()` digunakan untuk menghapus data dari indeks paling awal.
+
+import ShiftDemo from "./ShiftDemo.tsx";
+
+<ShiftDemo />
+
+### Metode Unshift 
+
+Metode `unshfit()` digunakan untuk menambahkan satu atau lebih data baru ke indeks paling awal.
+
+import UnshiftDemo from "./UnshiftDemo.tsx";
+
+<UnshiftDemo />
+
+### Metode Splice
+
+Metode `splice()` berfungsi bisa menambahkan data, bisa menghapus data pada array, bisa dua duanya sekaligus tergantung isi parameter yang kalian berikan pada splice
+contoh `.splice(0,1,"ayam", "unta")`
+
+- simplenya .splice(param1, param2, ...param-sisanya) _berarti parameternya bisa ada banyak data_
+- parameter pertama sebagai penentuan posisi mau di index ke berapa
+- parameter kedua sebagai penentuan mau menghapus berapa banyak data
+- untuk sisa parameternya, berguna untuk menambahkan data kedalam array 
+
+import SpliceDemo from "./SpliceDemo.tsx";
+
+<SpliceDemo />
+
+### Metode Slice
+
+Metode `slice()` berfungsi untuk **membuat** array baru diantara indeks awal sampai indeks akhir.
+
+import SliceDemo from "./SliceDemo.tsx";
+
+<SliceDemo />
+
+> Metode `slice()` tidak memutasikan array seperti metode-metode sebelumnya
+> Melainkan dengan membuat salinan lalu mengubahnya.
+> Oleh karena itu untuk mendapatkan hasilnya kita harus menampung `output`
+> yang dihasilkan dari pemanggilan metode tersebut.
+
+
+Terimakasih Telah Membaca !
+
+## Referensi
+
+- [Week2-Array-and-Logic-Nolep](https://github.com/RPN-Phase-0/Week2-Array-and-Logic-Nolep/blob/main/study-materials/part1.md)

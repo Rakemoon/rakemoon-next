@@ -25,7 +25,8 @@
     "remark-directive": "^3.0.0",
     "remark-frontmatter": "^5.0.0",
     "remark-gfm": "^4.0.0",
-    "remark-mdx-frontmatter": "^5.0.0"
+    "remark-mdx-frontmatter": "^5.0.0",
+    "shiki-magic-move": "^0.5.0"
   },
   "devDependencies": {
     "@catppuccin/tailwindcss": "^0.1.6",

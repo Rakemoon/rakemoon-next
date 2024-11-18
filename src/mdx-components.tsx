@@ -8,6 +8,7 @@ import Table from "./components/MDX/Table";
 import OrderedList from "./components/MDX/OrderedList";
 import UnorderedList from "./components/MDX/UnorderedList";
 import Code from "./components/MDX/Code";
+import Link from "./components/Link/Link";
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   let headCount = 0;
@@ -36,6 +37,8 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     tr: props => <Table.Row>{props.children}</Table.Row>,
     ol: props => <OrderedList>{props.children}</OrderedList>,
     ul: props => <UnorderedList>{props.children}</UnorderedList>,
+
+    a: props => <Link {...props as Record<"href", never>} className="text-ctp-sky">{props.children}</Link>,
 
     code: props => <Code language={props.className}>{props.children}</Code>
   }

@@ -8,6 +8,7 @@ type Props = {
 }
 
 export default function TableOfContents({ scrollOffset }: Props) {
+  const [parentOffset, setParentOffset] = useState(0);
   const [list, setList] = useState([] as [string, string, number][]);
   const [gridRow, setGridRow] = useState("1/2");
 
@@ -15,12 +16,14 @@ export default function TableOfContents({ scrollOffset }: Props) {
     const article = document.querySelector("article");
     const headings = document.querySelectorAll("article>h2,h3") as NodeListOf<HTMLHeadingElement>;
     setGridRow(`1/${article!.children.length + 1}`);
+    const parentOfset = article!.parentElement!.offsetTop;
+    setParentOffset(parentOfset);
 
     const headlist = [] as [number, () => unknown, () => unknown][];
 
     for (const heading of headings) {
       const className = "!text-ctp-sky scale-105".split(" ");
-      headlist.push([heading.offsetTop + scrollOffset, () => {
+      headlist.push([heading.offsetTop + scrollOffset + parentOfset, () => {
         const anchor = document.querySelector(`#table-of-contents>nav>a[href='#${heading.id}']`) as HTMLAnchorElement;
         for (const cn of className) anchor.classList.add(cn);
       }, () => {
@@ -51,10 +54,9 @@ export default function TableOfContents({ scrollOffset }: Props) {
   const onClick: React.MouseEventHandler<HTMLAnchorElement> = e => {
     e.preventDefault();
     const hash = decodeURIComponent(e.currentTarget.hash);
-    console.log(hash);
-    const el = document.querySelector(hash) as HTMLHeadingElement;
+    const el = document.getElementById(hash.replace("#", "")) as HTMLHeadingElement;
     window.scrollTo({
-      top: el.offsetTop + scrollOffset,
+      top: el.offsetTop + scrollOffset + (parentOffset),
       behavior: "smooth",
     });
   }
@@ -63,7 +65,7 @@ export default function TableOfContents({ scrollOffset }: Props) {
     "![grid-column:3/4]",
     "ml-viewport",
     "hidden",
-    "@[66.25rem]/main:block",
+    "@[66.25rem]/article:block",
     "h-fit",
     "sticky",
     "top-32",
