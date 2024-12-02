@@ -25,10 +25,10 @@ export default function TableOfContents({ scrollOffset }: Props) {
       const className = "!text-ctp-sky scale-105".split(" ");
       headlist.push([heading.offsetTop + scrollOffset + parentOfset, () => {
         const anchor = document.querySelector(`#table-of-contents>nav>a[href='#${heading.id}']`) as HTMLAnchorElement;
-        for (const cn of className) anchor.classList.add(cn);
+        for (const cn of className) anchor?.classList.add(cn);
       }, () => {
         const anchor = document.querySelector(`#table-of-contents>nav>a[href='#${heading.id}']`) as HTMLAnchorElement;
-        for (const cn of className) anchor.classList.remove(cn);
+        for (const cn of className) anchor?.classList.remove(cn);
       }]);
       setList(x => [...x, [heading.textContent!, heading.id!, heading.tagName === "H2" ? 0 : 1] as const])
     };
