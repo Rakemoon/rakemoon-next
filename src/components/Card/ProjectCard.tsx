@@ -3,6 +3,7 @@ import SectionTitle from "../Title/SectionTitle";
 import { cn } from "@/util";
 import Image from "next/image";
 import LinkOnList from "../Link/LinkOnList";
+import techStack from "../ui/TechStack";
 
 type Props = ProjectList & {
   className?: string;
@@ -14,14 +15,13 @@ export default function ProjectCard(props: Props) {
       "dark:bg-ctp-base",
       "backdrop-blur",
       "dark:backdrop-blur-none",
-      "p-5",
       "text-ctp-text",
       "rounded-md",
+      "dark:border dark:border-ctp-overlay2",
+      "shadow-md",
+      // "dark:shadow-none",
       "flex",
       "flex-col",
-      "gap-1",
-      "dark:border dark:border-ctp-overlay2",
-      "shadow-md dark:shadow-none",
       props.className
     )}>
     <Image
@@ -34,13 +34,24 @@ export default function ProjectCard(props: Props) {
         "h-auto aspect-video"
       )}
     />
-    <SectionTitle className="mt-5">{props.name}</SectionTitle>
-    <p className="mb-5">{props.summary}</p>
-    <p className="flex flex-wrap gap-1 mt-auto">{props.stacks.map(x => <span key={x}>#{x}</span>)}</p>
-    <ul className="pl-viewport mt-5">
-      {props.links.map(([name, href]) => <li key={name}>
-        <LinkOnList href={href}>{name}</LinkOnList>
-      </li>)}
-    </ul>
+    <div className={cn(
+      "rounded-md",
+      "px-5 py-5",
+      "flex",
+      "flex-col",
+      "grow"
+    )}>
+      <SectionTitle>{props.name}</SectionTitle>
+      <p className="mb-5">{props.summary}</p>
+      <p className="flex gap-2 mt-auto flex-wrap-reverse">{props.stacks.map(x => {
+        const stack = techStack[x];
+        return <stack.icon key={x} className="flex-shrink-0" width="2rem" height="2rem" />
+      })}</p>
+      <ul className="pl-viewport mt-5">
+        {props.links.map(([name, href]) => <li key={name}>
+          <LinkOnList href={href}>{name}</LinkOnList>
+        </li>)}
+      </ul>
+    </div>
   </div>
 }

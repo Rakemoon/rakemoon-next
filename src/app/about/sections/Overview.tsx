@@ -25,7 +25,7 @@ function GridItem({ className, children, innerClassName }: GridItemProps) {
   return <div
     className={cn(
       "border-4",
-      "hover:z-20 border-dashed border-ctp-sky rounded-md",
+      "border-dashed border-ctp-sky rounded-md",
       "flex",
       className
     )}>
@@ -63,7 +63,7 @@ export default function Overview() {
 
   return <section
     id="overview"
-    className="flex flex-col items-center text-ctp-text overflow-hidden"
+    className="flex flex-col items-center text-ctp-text overflow-hidden isolate"
   >
     <div
       className={cn(
@@ -93,7 +93,7 @@ export default function Overview() {
           text="Overview"
           className={cn(
             "absolute",
-            "-top-11"
+            "-top-20"
           )}
         />
         {overviewDescription.map(x => <p
@@ -174,7 +174,7 @@ export default function Overview() {
         "max-md:[grid-column:1/13]",
         "max-md:[grid-row:7/10]",
       )} innerClassName="flex flex-col">
-        <LazyMap className="w-full rounded-t-md aspect-video shadow-inner" />
+        <LazyMap className="w-full rounded-t-md aspect-video shadow-inner isolate" />
         <p className="p-viewport">
           I am from <strong>Bandung</strong>, also known as the City of Flowers <i>(Kota Kembang)</i> in <strong>Indonesia</strong>.
           But now this city has become a paradise for snacks.

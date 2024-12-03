@@ -7,31 +7,32 @@ import { motion } from "framer-motion";
 
 
 export default function TechStack() {
-  return <section id="tech-stack" className="min-h-screen flex flex-col">
+  return <section id="tech-stack" className="flex flex-col overflow-hidden">
     <AnimatedTitle text="Tech Stack" className="!text-ctp-teal" />
-    <ul
+    <motion.ul
+      whileInView={{
+        x: ["100%", "-100%", "100%"]
+      }}
+      transition={{
+        duration: 50,
+        repeat: Infinity,
+      }}
       className={cn(
-        "grid",
-        "grid-cols-8",
         "place-content-center",
         "p-viewport",
         "gap-5",
         "my-auto",
-        "max-lg:grid-cols-5",
-        "max-sm:grid-cols-4",
+        "flex",
       )}>
       {Object
         .entries(techStack)
-        .map(([k, v]) => <motion.li
-          whileInView={{ rotate: [180, 0], scale: [0, 1] }}
-          transition={{ duration: 0.5 }}
+        .map(([k, v]) => <li
           key={k}
         >
           <v.icon
             width="10rem"
             height="10rem"
             className={cn(
-              "w-full h-full",
               "shadow-md",
               "bg-ctp-crust",
               "p-2",
@@ -41,8 +42,8 @@ export default function TechStack() {
               "dark:rounded-none"
             )}
           />
-        </motion.li>)
+        </li>)
       }
-    </ul>
+    </motion.ul>
   </section>;
 }

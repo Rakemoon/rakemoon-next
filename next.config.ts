@@ -16,10 +16,10 @@ const nextConfig: NextConfig = {
       }
     ]
   },
-  i18n: {
-    locales: ["en-US", "id-ID"],
-    defaultLocale: "en-US"
-  }
+  // i18n: {
+  //   locales: ["en-US", "id-ID"],
+  //   defaultLocale: "en-US"
+  // }
 };
 
 const withMDX = createMDX({

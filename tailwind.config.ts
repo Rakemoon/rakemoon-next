@@ -3,6 +3,7 @@ import catpuccin from "@catppuccin/tailwindcss";
 import containerQueries from "@tailwindcss/container-queries";
 
 const config: Config = {
+  darkMode: "selector",
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",

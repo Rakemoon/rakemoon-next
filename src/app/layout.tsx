@@ -1,3 +1,4 @@
+import ThemeContextProvider from "@/contexts/ThemeContext";
 import "./globals.css";
 
 type Props = {
@@ -7,7 +8,9 @@ type Props = {
 export default function LayoutV2({ children }: Props) {
   return <html lang="en-US">
     <body className="bg-ctp-base dark:ctp-mocha">
-      {children}
+      <ThemeContextProvider>
+        {children}
+      </ThemeContextProvider>
     </body>
   </html>
 }

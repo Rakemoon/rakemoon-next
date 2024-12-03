@@ -12,7 +12,7 @@ type Star = {
   x: number;
   y: number;
   opacity: number;
-  length: number;
+  radius: number;
 }
 
 export default memo(function Stars({ className, starsAmount }: Props) {
@@ -20,36 +20,45 @@ export default memo(function Stars({ className, starsAmount }: Props) {
 
   useEffect(() => {
     let reqID = 0;
+    const pseudoCanvas = document.createElement("canvas");
     const canvas = ref.current!;
     const { width, height } = canvas.getBoundingClientRect();
     canvas.width = width;
     canvas.height = height;
+    pseudoCanvas.width = width;
+    pseudoCanvas.height = height;
+
+    const ctxPseudo = pseudoCanvas.getContext("2d")!;
 
     let ctx = canvas.getContext("2d")!;
     let stars: Star[] = [];
 
     const drawStars: FrameRequestCallback = () => {
+      ctxPseudo.clearRect(0, 0, canvas.width, canvas.height);
+      ctxPseudo.drawImage(canvas, 0, 0, canvas.width, canvas.height);
       ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.globalAlpha = 0.9;
+      ctx.drawImage(pseudoCanvas, 0, 0, canvas.width, canvas.height);
       for (const i of range(starsAmount)) {
         const star = stars[i];
         let opacity = 0;
-        let length = 0;
+        let radius = 0;
         let x = 0, y = 0;
         if (star) {
-          star.y += ((i + 1) / starsAmount);
+          star.y += ((i + 1) / starsAmount) + 0.5;
 
           if (star.y < 0) star.y = canvas.height;
           if (star.y > canvas.height) star.y = 0;
           x = star.x;
           y = star.y;
           opacity = star.opacity;
-          length = star.length;
+          radius = star.radius;
         } else {
           opacity = Math.random();
           x = Math.round(Math.random() * canvas.width);
           y = Math.round(Math.random() * canvas.height);
-          length = 1 + Math.random() * 2;
-          stars.push({ x, y, opacity, length });
+          radius = 1 + Math.random() * 2;
+          stars.push({ x, y, opacity, radius });
         }
 
 
@@ -58,7 +67,7 @@ export default memo(function Stars({ className, starsAmount }: Props) {
         ctx.globalAlpha = opacity;
 
         ctx.beginPath();
-        ctx.arc(x, y, length, 0, 2 * Math.PI);
+        ctx.arc(x, y, radius, 0, 2 * Math.PI);
         ctx.fill();
         ctx.closePath();
       }
@@ -80,6 +89,7 @@ export default memo(function Stars({ className, starsAmount }: Props) {
     return () => {
       cancelAnimationFrame(reqID);
       window.removeEventListener("resize", onResize);
+      pseudoCanvas.remove();
     }
   }, [starsAmount]);
 
