@@ -33,6 +33,8 @@ export default function TechStack() {
             width="10rem"
             height="10rem"
             className={cn(
+              "max-md:w-16",
+              "max-md:h-16",
               "shadow-md",
               "bg-ctp-crust",
               "p-2",
