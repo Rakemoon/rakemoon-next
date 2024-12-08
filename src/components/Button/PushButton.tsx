@@ -1,6 +1,6 @@
 import { cn } from "@/util";
 
-type Props = React.HTMLAttributes<HTMLButtonElement>;
+type Props = React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 export default function PushButton({ className, children, ...props }: Props) {
   return <button

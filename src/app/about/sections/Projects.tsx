@@ -53,6 +53,6 @@ export default function Projects() {
       </div>
     </div>
     {/* items */}
-    <SkyLine className="" />
+    <SkyLine className="-mb-px" />
   </section>
 }
