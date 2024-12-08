@@ -9,6 +9,7 @@ import Experience from "./sections/Experience";
 import TechStack from "./sections/TechStack";
 import Projects from "./sections/Projects";
 import { Metadata } from "next";
+import Contact from "./sections/Contact";
 
 const desc = getLang("HERO_DESCRIPTION")();
 
@@ -47,6 +48,7 @@ export default function AboutPage() {
     <Experience />
     <TechStack />
     <Projects />
+    <Contact />
     <Footer className="mt-auto" />
   </main>
 }
