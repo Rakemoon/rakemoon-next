@@ -16,10 +16,11 @@ export default function HomePageV2() {
     "grid-rows-[min-content_min-content_1fr_min-content]",
     "grid-cols-[1fr_min(calc(100vw-39ch-theme('spacing.viewport')),_65ch)_min(calc(100vw-70ch-theme('spacing.viewport')*3),_40ch)_1fr]",
     "max-lg:grid-cols-[1fr_min(calc(100%-theme('spacing.viewport')*2),_65ch)_1fr]",
-    "gap-x-viewport"
+    "gap-x-viewport",
   )}>
     <Navbar className={cn(
       "[grid-column:1/-1]",
+      "z-30",
     )} />
     <Header className="[grid-column:1/-1]" />
     <div className={cn(
@@ -27,7 +28,8 @@ export default function HomePageV2() {
       "[grid-column:2]",
       "-mt-1",
       "-mx-viewport p-viewport",
-      "flex gap-viewport flex-col"
+      "flex gap-viewport flex-col",
+      "isolate"
     )}>
       <SectionTitle>ARTICLE AND TUTORIALS</SectionTitle>
       {entries.map(([path, data]) => <ArticleCard
