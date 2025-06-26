@@ -20,9 +20,9 @@ const enUS = {
   OVERVIEW_BADGE: () => "Introduction",
   OVERVIEW_DESCRIPTION: () => [
     oneLineTrim`
-    I am a Junior Fullstack Developer with 5 months of experience in developing, designing, and deploying backend systems.
-    I possess skills in design slicing and innovation in frontend development.
-    Additionally, I have experience in creating WhatsApp bots, as well as working as a warehouse staff member and e-commerce administrator.
+      I'm a Senior Fullstack Stack Developer with 2 year of experience in developing, designing, and implementing scalable backend systems. I also specialize in frontend innovation and design slicing, ensuring that UI/UX designs are translated into responsive and interactive user interfaces.
+      In addition to traditional web development, I have hands-on experience in Web3 technologies, including smart contract integration and decentralized application (dApp) development.
+      With a solid foundation in Computer Networking from my academic background, I bring a unique perspective that bridges software development and system infrastructure. I'm passionate about continuous learning, quick to adapt to new tools and environments, and always eager to contribute positively to any team or project.
   `,
     oneLineTrim`
     Furthermore, I have a background in network engineering, thanks to my education in Computer Networking.
