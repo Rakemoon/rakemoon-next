@@ -17,7 +17,7 @@ export default function GeoMap({ className }: Props) {
   const center = useMemo(() => {
     if (!yourPosition) return myPosition;
     console.log("happenr");
-    return myPosition.map((x, i) => x / 2) as [number, number];
+    return myPosition.map((x, ) => x / 2) as [number, number];
   }, [yourPosition]);
 
   useEffect(() => {
